@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "types": ["@emotion/react/types/css-prop"],
     "allowJs": true,
     "jsx": "preserve",
     "strict": true,
