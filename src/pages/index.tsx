@@ -1,10 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { Link } from "gatsby";
+import Header from "components/Header";
+import { RecoilRoot } from "recoil";
 
 const IndexPage: FunctionComponent = function () {
 	return (
 		<div>
-			<Link to="/info/">To Info</Link>
+			<RecoilRoot>
+				<Header />
+			</RecoilRoot>
 		</div>
 	);
 };
