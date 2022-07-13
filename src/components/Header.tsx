@@ -9,6 +9,20 @@ import { isDarkAtom } from "../atoms";
 const Header: FunctionComponent = function () {
 	const [isDark, setIsDark] = useRecoilState(isDarkAtom);
 
+	//const [isDark, setIsDark] = useRecoilState(isDarkAtom);
+	const root = document.querySelector(".root");
+
+	if (isDark === true) {
+		root?.classList.add("dark");
+	} else {
+		root?.classList.remove("dark");
+	}
+
+	const darkmodeClick = () => {
+		setIsDark(prev => !prev);
+		console.log(root?.classList);
+	};
+
 	return (
 		<div className="wrapper">
 			<header className="header">
@@ -34,10 +48,7 @@ const Header: FunctionComponent = function () {
 					<Link to={"/join"}>
 						<span>Join us</span>
 					</Link>
-					<button
-						onClick={() => setIsDark(prev => !prev)}
-						className="mode-change"
-					>
+					<button onClick={darkmodeClick} className="mode-change-button">
 						<FontAwesomeIcon icon={faMoon} className="darkmode-icon" />
 					</button>
 				</nav>

@@ -1,13 +1,29 @@
-$dark-mode: (
-    "togglecolor": #fed330,
-    "headercolor": #2f3640,
-    "maincolor": #2f3640,
-    "fontcolor": #2f3640,
+$colors: (
+    dark: (
+        togglecolor: #fed330,
+        headercolor: #2f3640,
+        maincolor: #2f3640,
+        fontcolor: #2f3640,
+    ),
+    light: (
+        togglecolor: #fff,
+        headercolor: #0984e3,
+        maincolor: #fff,
+        fontcolor: #2f3640,
+    )
 );
 
-$light-mode: (
-    "togglecolor": #fff,
-    "headercolor": #0984e3,
-    "maincolor": #fff,
-    "fontcolor": #2f3640,
-)
+@function get-color($key, $type: 'light') {
+    @each $name, $color in map-get($colors, $type) {
+        @if($key == $name) {
+            @return $color;
+        }
+    }
+};
+
+@mixin get-color($property,$color){
+    #{$property}: get-color($color);
+    @at-root .root.dark & {
+      #{$property}: get-color($color, dark);
+    }
+  }

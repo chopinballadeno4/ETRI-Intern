@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import "_darkmode.scss";
 
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -46,12 +50,18 @@
 }
 
 .darkmode-icon {
-    margin-left: 30px;
     font-size: 30px;
-    color: #fff;
+    @include get-color(color, togglecolor);
 }
 
-.mode-change {
+.mode-change-button {
     background-color: transparent;
     border: 0;
+    margin-left: 30px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
+
+
