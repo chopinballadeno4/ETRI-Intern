@@ -1,18 +1,20 @@
 import React, { FunctionComponent } from "react";
 import { Link } from "gatsby";
 import Header from "components/Header";
+import Footer from "components/Footer";
 import { RecoilRoot } from "recoil";
-import "../scss/reset.scss";
 // import { useRecoilState } from "recoil";
 // import { isDarkAtom } from "../atoms";
 
 const IndexPage: FunctionComponent = function () {
 	return (
-		<RecoilRoot>
-			<div className="root">
+		<div className="root">
+			<RecoilRoot>
 				<Header />
-			</div>
-		</RecoilRoot>
+				<div style={{ width: "100%" }}></div>
+				<Footer />
+			</RecoilRoot>
+		</div>
 	);
 };
 

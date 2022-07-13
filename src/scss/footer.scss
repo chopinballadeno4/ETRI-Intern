@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import "_darkmode.scss";
+
+.footer-wrapper {
+    @include get-color(background-color, headercolor);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+
+        &:first-child {
+            @include get-color(color, textcolor);
+        }
+        &:last-child {
+            @include get-color(color, opacitycolor);
+        }
+
+        
+    }
+}

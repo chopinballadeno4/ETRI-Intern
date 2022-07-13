@@ -24,8 +24,8 @@ const Header: FunctionComponent = function () {
 	};
 
 	return (
-		<div className="wrapper">
-			<header className="header">
+		<div className="header-wrapper">
+			<header className="header-div">
 				<div>
 					<Link to={"/"}>logo</Link>
 				</div>
