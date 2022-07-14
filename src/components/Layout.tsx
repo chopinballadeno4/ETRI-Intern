@@ -13,7 +13,7 @@ function Layout(props: LayoutProps) {
 
 	return (
 		<RecoilRoot>
-			<div>
+			<div className="root">
 				<Header />
 				{props.children}
 				<Footer />

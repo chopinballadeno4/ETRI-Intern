@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from "react";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import Layout from "components/Layout";
 
 function research() {
 	return (
-		<div className="research-wrapper">
-			<Header />
-			<Footer />
-		</div>
+		<Layout>
+			<main>
+				<span>this is research</span>
+			</main>
+		</Layout>
 	);
 }
 export default research;
