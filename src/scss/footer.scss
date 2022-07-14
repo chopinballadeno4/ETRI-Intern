@@ -11,14 +11,11 @@
     align-items: center;
 
     span {
-
         &:first-child {
             @include get-color(color, textcolor);
         }
         &:last-child {
             @include get-color(color, opacitycolor);
-        }
-
-        
+        }  
     }
 }

@@ -1,0 +1,6 @@
+@import "_darkmode.scss";
+
+.research-wrapper {
+    @include get-color(background-color, maincolor);
+    width: 100%;
+}
