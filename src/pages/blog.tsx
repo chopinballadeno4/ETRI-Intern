@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from "react";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import Layout from "components/Layout";
 
 function blog() {
 	return (
-		<div className="blog-wrapper">
-			<span>this is blog</span>
-		</div>
+		<Layout>
+			<main className="blog-wrapper">
+				<span>this is blog</span>
+			</main>
+		</Layout>
 	);
 }
 

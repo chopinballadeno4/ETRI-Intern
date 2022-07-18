@@ -1,26 +1,31 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import { Link } from "gatsby";
 import "../scss/header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import { useRecoilState } from "recoil";
-import { isDarkAtom } from "../atoms";
 
 const Header: FunctionComponent = function () {
-	const [isDark, setIsDark] = useRecoilState(isDarkAtom);
+	const [isDark, setIsDark] = useState(false);
+	useEffect(() => {
+		if (window.localStorage.getItem("isDark") === null) {
+			setIsDark(false);
+			document.querySelector(".root")?.classList.remove("dark");
+		} else {
+			setIsDark(true);
+			document.querySelector(".root")?.classList.add("dark");
+		}
+	}, []);
 
-	//const [isDark, setIsDark] = useRecoilState(isDarkAtom);
-	const root = document.querySelector(".root");
-
-	if (isDark === true) {
-		root?.classList.add("dark");
-	} else {
-		root?.classList.remove("dark");
-	}
-
-	const darkmodeClick = () => {
-		setIsDark(prev => !prev);
-		console.log(root?.classList);
+	const darkmodeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+		event.preventDefault();
+		if (window.localStorage.getItem("isDark") === null) {
+			window.localStorage.setItem("isDark", "yes");
+			document.querySelector(".root")?.classList.add("dark");
+		} else {
+			window.localStorage.removeItem("isDark");
+			document.querySelector(".root")?.classList.remove("dark");
+		}
+		console.log(document.querySelector(".root")?.classList);
 	};
 
 	return (

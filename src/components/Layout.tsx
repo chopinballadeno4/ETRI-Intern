@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import { RecoilRoot } from "recoil";
 
 type LayoutProps = {
 	//props: React.ComponentType;
@@ -9,16 +8,12 @@ type LayoutProps = {
 };
 
 function Layout(props: LayoutProps) {
-	console.log(props);
-
 	return (
-		<RecoilRoot>
-			<div className="root">
-				<Header />
-				{props.children}
-				<Footer />
-			</div>
-		</RecoilRoot>
+		<div className="root">
+			<Header />
+			{props.children}
+			<Footer />
+		</div>
 	);
 }
 

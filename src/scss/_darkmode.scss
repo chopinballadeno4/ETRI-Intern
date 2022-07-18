@@ -28,4 +28,4 @@ $colors: (
     @at-root .root.dark & {
       #{$property}: get-color($color, dark);
     }
-  }
+}

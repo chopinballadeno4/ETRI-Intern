@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from "react";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import Layout from "components/Layout";
 
 function achievement() {
 	return (
-		<div className="achievement-wrapper">
-			<span>this is achievement</span>
-		</div>
+		<Layout>
+			<main className="achievement-wrapper">
+				<span>this is achievement</span>
+			</main>
+		</Layout>
 	);
 }
 

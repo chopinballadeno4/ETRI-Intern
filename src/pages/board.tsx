@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from "react";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import Layout from "components/Layout";
 
 function board() {
 	return (
-		<div className="board-wrapper">
-			<span>this is board</span>
-		</div>
+		<Layout>
+			<main className="board-wrapper">
+				<span>this is board</span>
+			</main>
+		</Layout>
 	);
 }
 export default board;

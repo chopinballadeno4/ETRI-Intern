@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-plugin-firebase",
       options: {

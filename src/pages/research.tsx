@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import Layout from "components/Layout";
 
 function research() {
 	return (
 		<Layout>
-			<main>
+			<main className="research-wrapper">
 				<span>this is research</span>
 			</main>
 		</Layout>
