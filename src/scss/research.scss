@@ -3,4 +3,67 @@
 .research-wrapper {
     @include get-color(background-color, maincolor);
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.research-side-nav {
+    margin-top: 30px;
+    display: flex;
+    height: 100%;
+    margin-bottom: 20px;
+    ul {
+        display: flex;  
+        & .noneclicked-button {
+            @include get-color(background-color, content);
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 40px;
+            border: 0;
+            &:hover {
+                cursor: pointer;
+            }
+
+            display: grid;
+            place-items: center;
+            span{
+                @include get-color(color, textcolor);
+                font-weight: 300;
+            }
+        }
+        
+        & .clicked-button {
+            @include get-color(content-clicked-bgcolor, content);
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 40px;
+            border: 0;
+            &:hover {
+                cursor: pointer;
+            }
+
+            display: grid;
+            place-items: center;
+            span{
+                @include get-color(content-clicked-textcolor, textcolor);
+                font-weight: bold;
+            }
+
+        }
+    }
+}
+
+.research-main {
+    width: 800px;
+    height: 1000px;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    
+    @include get-color(background-color,content);
 }

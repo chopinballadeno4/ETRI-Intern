@@ -1,10 +1,14 @@
 $colors: (
     dark: (
         togglecolor: #fed330,
-        headercolor: #2f3640,
-        maincolor: #2f3640,
+        headercolor: #000,
+        maincolor: #000,
         textcolor: #fff,
         opacitycolor: #888888,
+        // content: #1E1E1E,
+        content: #333,
+        content-clicked-bgcolor: #fff,
+        content-clicked-textcolor: #000,
     ),
     light: (
         togglecolor: #fff,
@@ -12,6 +16,9 @@ $colors: (
         maincolor: #fff,
         textcolor: #fff,
         opacitycolor: #888888,
+        content: #0be881,
+        content-clicked-bgcolor: blue,
+        content-clicked-textcolor: #000,
     )
 );
 
