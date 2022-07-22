@@ -1,19 +1,11 @@
-import "../scss/PersonInfo.scss";
+import "../scss/c-personInfo.scss";
 import React from "react";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
+import { IPersonListType, IPersonInfo } from "types/PersonInfo.types";
 
-interface IPersonInfo {
-	role?: string;
-	contact?: string;
-}
-
-function PersonInfo({ role, contact }: IPersonInfo) {
-	return (
-		<div className="PersonInfo-wrapper">
-			<img alt="img"></img>
-			<span>{role}</span>
-			<span>{contact}</span>
-		</div>
-	);
+function PersonInfo({ name, contact, department, work }: IPersonInfo) {
+	return <div className="PersonInfo-wrapper"></div>;
 }
 
 export default PersonInfo;
