@@ -3,16 +3,22 @@
 .research-wrapper {
     @include get-color(background-color, maincolor);
     width: 100%;
-    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.research-main {
+    margin: 20px 0;
+    width: 45%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .research-side-nav {
     margin-top: 30px;
     display: flex;
-    height: 100%;
+    justify-content: center;
     margin-bottom: 20px;
     ul {
         display: flex;  
@@ -21,48 +27,37 @@
             margin-right: 20px;
             padding: 20px;
             border-radius: 40px;
-            border: 0;
+            @include get-color(border, bordercolor);
+
             &:hover {
                 cursor: pointer;
             }
 
             display: grid;
             place-items: center;
-            span{
-                @include get-color(color, commontextcolor);
+            span {
+                @include get-color(color, textcolor);
                 font-weight: 300;
             }
         }
         
         & .clicked-button {
-            @include get-color(content-clicked-bgcolor, content);
+            @include get-color(background-color, content-clicked-bgcolor);
             margin-right: 20px;
             padding: 20px;
             border-radius: 40px;
-            border: 0;
+            @include get-color(border, bordercolor);
+
             &:hover {
                 cursor: pointer;
             }
 
             display: grid;
             place-items: center;
-            span{
-                @include get-color(content-clicked-textcolor, commontextcolor);
+            span {
+                @include get-color(color, content-clicked-textcolor);
                 font-weight: bold;
             }
         }
     }
-}
-
-.research-main {
-    width: 800px;
-    height: 1000px;
-    border-radius: 4px;
-    box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
-    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    
-    @include get-color(background-color,content);
 }

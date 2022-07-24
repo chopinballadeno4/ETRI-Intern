@@ -1,0 +1,30 @@
+@import "../../styles/darkmode";
+
+.ResearchItem-wrapper {
+    height: 140px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-bottom: 20px;
+    @include get-color(border-bottom, bordercolor);
+
+    span {
+        @include get-color(color, textcolor);
+    }
+}
+
+.ResearchItem-img {
+    img {
+        width: 200px;
+    }
+}
+
+.ResearchItem-content {
+    display: flex;
+    flex-direction: column;
+    
+    span {
+        &:first-child {
+            font-size: 25px;
+        }
+    }
+}

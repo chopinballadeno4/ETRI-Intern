@@ -1,6 +1,7 @@
 import "./styles/research.scss";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import Layout from "components/Layout";
+import ResearchList from "components/ResearchList";
 
 function research() {
 	const [isIntroduce, setIsIntroduce] = useState(false);
@@ -16,92 +17,82 @@ function research() {
 	return (
 		<Layout>
 			<div className="research-wrapper">
-				<nav className="research-side-nav">
-					<ul>
-						<li>
-							{isIntroduce ? (
-								<button
-									className="clicked-button"
-									onClick={() => {
-										resetButton();
-										setIsIntroduce(prev => !prev);
-									}}
-								>
-									<span>introduce</span>
-								</button>
-							) : (
-								<button
-									className="noneclicked-button"
-									onClick={() => {
-										resetButton();
-										setIsIntroduce(prev => !prev);
-									}}
-								>
-									<span>introduce</span>
-								</button>
-							)}
-						</li>
-						<li>
-							{isDataSet ? (
-								<button
-									className="clicked-button"
-									onClick={() => {
-										resetButton();
-										setIsDataset(prev => !prev);
-									}}
-								>
-									<span>data set</span>
-								</button>
-							) : (
-								<button
-									className="noneclicked-button"
-									onClick={() => {
-										resetButton();
-										setIsDataset(prev => !prev);
-									}}
-								>
-									<span>data set</span>
-								</button>
-							)}
-						</li>
-						<li>
-							{isSourceCode ? (
-								<button
-									className="clicked-button"
-									onClick={() => {
-										resetButton();
-										setIsSourceCode(prev => !prev);
-									}}
-								>
-									<span>source code</span>
-								</button>
-							) : (
-								<button
-									className="noneclicked-button"
-									onClick={() => {
-										resetButton();
-										setIsSourceCode(prev => !prev);
-									}}
-								>
-									<span>source code</span>
-								</button>
-							)}
-						</li>
-					</ul>
-				</nav>
-				<nav className="research-main">
-					<ul>
-						<li>
-							<span>introduce</span>
-						</li>
-						<li>
-							<span>data set</span>
-						</li>
-						<li>
-							<span>source code</span>
-						</li>
-					</ul>
-				</nav>
+				<div className="research-main">
+					<div className="research-side-nav">
+						<ul>
+							<li>
+								{isIntroduce ? (
+									<button
+										className="clicked-button"
+										onClick={() => {
+											resetButton();
+											setIsIntroduce(prev => !prev);
+										}}
+									>
+										<span>introduce</span>
+									</button>
+								) : (
+									<button
+										className="noneclicked-button"
+										onClick={() => {
+											resetButton();
+											setIsIntroduce(prev => !prev);
+										}}
+									>
+										<span>introduce</span>
+									</button>
+								)}
+							</li>
+							<li>
+								{isDataSet ? (
+									<button
+										className="clicked-button"
+										onClick={() => {
+											resetButton();
+											setIsDataset(prev => !prev);
+										}}
+									>
+										<span>data set</span>
+									</button>
+								) : (
+									<button
+										className="noneclicked-button"
+										onClick={() => {
+											resetButton();
+											setIsDataset(prev => !prev);
+										}}
+									>
+										<span>data set</span>
+									</button>
+								)}
+							</li>
+							<li>
+								{isSourceCode ? (
+									<button
+										className="clicked-button"
+										onClick={() => {
+											resetButton();
+											setIsSourceCode(prev => !prev);
+										}}
+									>
+										<span>source code</span>
+									</button>
+								) : (
+									<button
+										className="noneclicked-button"
+										onClick={() => {
+											resetButton();
+											setIsSourceCode(prev => !prev);
+										}}
+									>
+										<span>source code</span>
+									</button>
+								)}
+							</li>
+						</ul>
+					</div>
+					<ResearchList />
+				</div>
 			</div>
 		</Layout>
 	);
