@@ -1,0 +1,10 @@
+@import "../../styles/darkmode";
+
+.BoardList-wrapper {
+    width: 80%;
+    @include get-color(background-color, content);
+    height: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    @include get-color(border, bordercolor);
+}

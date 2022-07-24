@@ -29,7 +29,7 @@
             display: grid;
             place-items: center;
             span{
-                @include get-color(color, textcolor);
+                @include get-color(color, commontextcolor);
                 font-weight: 300;
             }
         }
@@ -47,7 +47,7 @@
             display: grid;
             place-items: center;
             span{
-                @include get-color(content-clicked-textcolor, textcolor);
+                @include get-color(content-clicked-textcolor, commontextcolor);
                 font-weight: bold;
             }
         }

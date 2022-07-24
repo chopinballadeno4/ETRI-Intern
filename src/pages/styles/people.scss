@@ -17,7 +17,7 @@
     background-color: pink;
 
     span {
-        @include get-color(color, textcolor);
+        @include get-color(color, commontextcolor);
         font-size: 22px;
     }
 

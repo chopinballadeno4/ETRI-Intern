@@ -1,4 +1,5 @@
 @import "../../styles/darkmode";
+@import "../../styles/extends";
 
 .board-wrapper {
     flex: 1;
@@ -8,18 +9,27 @@
 }
 
 .board-main {
+    margin: 20px 0;
     width: 40%;
     height: 100%;
-    background-color: aquamarine;
 }
 
 .board-buttonsection {
-    width: 100%;
-    height: 50px;
+    width: 90%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+        @extend %button;
+    }
     
 }
 
 .board-items {
+    display: flex;
+    justify-content: center;
     width: 100%;
 
 }

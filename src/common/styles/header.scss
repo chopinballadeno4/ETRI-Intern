@@ -38,7 +38,7 @@
 }
 
 .header-link span {
-    @include get-color(color, textcolor);
+    @include get-color(color, commontextcolor);
     font-size: 16px;
     outline: none;    
 }

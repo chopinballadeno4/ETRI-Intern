@@ -1,0 +1,41 @@
+@import "../../styles/darkmode";
+
+.BoardItem-item {
+    width: 100%;
+    height: 100px;
+    @include get-color(border-bottom, bordercolor);
+    margin-bottom: 20px;
+}
+
+.BoardItem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+
+    span {
+        &:first-child {
+            font-size: 25px;
+            @include get-color(color, textcolor);
+        }
+    }
+}
+
+.BoardItem-answer {
+    display: flex;
+    align-items: center;
+
+    span {
+        @include get-color(color, opacitycolor);
+    }
+}
+
+.BoardItem-icon {
+    font-size: 20px;
+    margin-right: 5px;
+    @include get-color(color, boardicon-color);
+}
+
+.BoardItem-content {
+    @include get-color(color, textcolor);
+}
