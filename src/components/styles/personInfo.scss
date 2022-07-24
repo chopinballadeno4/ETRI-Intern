@@ -1,4 +1,4 @@
-@import "_darkmode.scss";
+@import "../../styles/darkmode";
 
 .PersonInfo-wrapper {
     background-color: skyblue;
@@ -10,3 +10,7 @@
     line-height: 30px;
 }
 
+.PersonInfo-image {
+    width: 200px;
+    object-fit: scale-down;
+}

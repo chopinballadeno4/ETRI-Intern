@@ -1,4 +1,4 @@
-import "../scss/achievement.scss";
+import "./styles/achievement.scss";
 import React, { FunctionComponent } from "react";
 import Layout from "components/Layout";
 

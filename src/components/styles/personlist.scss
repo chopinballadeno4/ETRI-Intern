@@ -1,0 +1,10 @@
+@import "../../styles/darkmode";
+
+.PersonList-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}

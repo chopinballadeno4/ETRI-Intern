@@ -1,4 +1,4 @@
-@import "_darkmode.scss";
+@import "../../styles/darkmode";
 
 .research-wrapper {
     @include get-color(background-color, maincolor);

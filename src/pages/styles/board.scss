@@ -1,0 +1,25 @@
+@import "../../styles/darkmode";
+
+.board-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    @include get-color(background-color, maincolor);
+}
+
+.board-main {
+    width: 40%;
+    height: 100%;
+    background-color: aquamarine;
+}
+
+.board-buttonsection {
+    width: 100%;
+    height: 50px;
+    
+}
+
+.board-items {
+    width: 100%;
+
+}

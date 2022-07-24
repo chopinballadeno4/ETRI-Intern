@@ -1,4 +1,4 @@
-@import "_darkmode.scss";
+@import "../../styles/darkmode";
 
 .footer-wrapper {
     @include get-color(background-color, headercolor);
@@ -8,6 +8,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+
 
     span {
         &:first-child {

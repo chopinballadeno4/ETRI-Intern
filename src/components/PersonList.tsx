@@ -1,4 +1,4 @@
-import "../scss/c-personInfo.scss";
+import "./styles/personlist.scss";
 import React from "react";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
@@ -11,7 +11,7 @@ interface IPersonList {
 
 function PersonList({ posts }: IPersonList) {
 	return (
-		<div className="PersonInfo-wrapper">
+		<div className="PersonList-wrapper">
 			{posts.map(({ node: { id, frontmatter } }: IPersonListType) => (
 				<PersonInfo {...frontmatter} key={id} />
 			))}
