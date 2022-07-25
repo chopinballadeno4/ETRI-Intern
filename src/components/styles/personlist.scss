@@ -3,8 +3,9 @@
 .PersonList-wrapper {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
+    padding: 20px 0 60px 0;
+
+    grid-template-columns: repeat(5, 1fr);
 }

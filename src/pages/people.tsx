@@ -23,13 +23,20 @@ function people({
 	return (
 		<Layout>
 			<div className="people-wrapper">
-				<section className="people-group1">
-					<span>
-						Electronics and Telecommunications Research Institute, South Korea
-					</span>
-					<PersonList posts={edges} />
-				</section>
-				<section className="people-group2"></section>
+				<main className="people-main">
+					<section className="people-group1">
+						<span>
+							Electronics and Telecommunications Research Institute, South Korea
+						</span>
+						<PersonList posts={edges} />
+					</section>
+					<section className="people-group2">
+						<span>
+							Korea Advanced Institute of Science and Technology, South Korea
+						</span>
+						<PersonList posts={edges} />
+					</section>
+				</main>
 			</div>
 		</Layout>
 	);
