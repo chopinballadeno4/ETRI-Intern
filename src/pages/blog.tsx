@@ -5,7 +5,7 @@ function blog() {
 	return (
 		<Layout>
 			<main className="blog-wrapper">
-				<span>this is blog</span>
+				<main>this is blog</main>
 			</main>
 		</Layout>
 	);

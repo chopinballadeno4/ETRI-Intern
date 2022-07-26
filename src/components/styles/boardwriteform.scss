@@ -1,0 +1,52 @@
+@import "../../styles/extends.scss";
+@import "../../styles/darkmode";
+
+.BoardWriteForm-form {
+    display: grid;
+    grid-template-rows: 1fr 1fr 5fr 2fr;
+    height: 100%;
+    padding: 40px 20px;
+}
+
+.BoardWriteForm-title {
+    @extend %boardwriteform-input;
+    input {
+        height: 40%;
+    }
+}
+
+.BoardWriteForm-content {
+    @extend %boardwriteform-input;
+}
+
+.BoardWriteForm-info {
+    @extend %boardwriteform-input;
+    > div {
+        margin-top: 15px;
+    }
+    
+    div {
+        display: flex;
+        textarea {
+            width: 120px;
+            height: 50%;
+        }
+    }
+}
+
+.BoardWriteForm-idpw {
+    width: 60px;
+}
+
+
+.BoardWriteForm-submit {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    input {
+        @extend %button;
+        height: 50px;
+        width: 170px;
+        font-size: 16px;
+    }
+}

@@ -10,7 +10,7 @@ function board() {
 			<div className="board-wrapper">
 				<main className="board-main">
 					<div className="board-buttonsection">
-						<Link to="/boardadditem">New</Link>
+						<Link to="/boardwrite">New</Link>
 					</div>
 					<div className="board-items">
 						<BoardList />
