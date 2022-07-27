@@ -1,7 +1,7 @@
 import "./styles/achievement.scss";
 import React, { FunctionComponent, useState } from "react";
 import Layout from "components/Layout";
-import AchievementList from "components/AchievementList";
+import ItemList from "components/ItemList";
 
 function achievement() {
 	const [isIntroduce, setIsIntroduce] = useState(false);
@@ -13,6 +13,17 @@ function achievement() {
 		setIsDataset(false);
 		setIsSourceCode(false);
 	};
+
+	const content = [
+		{
+			title: "test1",
+			content: "content1",
+		},
+		{
+			title: "test2",
+			content: "centent2",
+		},
+	];
 
 	return (
 		<Layout>
@@ -91,7 +102,7 @@ function achievement() {
 							</li>
 						</ul>
 					</div>
-					<AchievementList />
+					<ItemList headertype={"achievement"} content={content} />
 				</div>
 			</div>
 		</Layout>

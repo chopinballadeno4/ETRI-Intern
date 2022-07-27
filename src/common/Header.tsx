@@ -50,9 +50,6 @@ const Header: FunctionComponent = function () {
 					<Link to={"/people"}>
 						<span>People</span>
 					</Link>
-					<Link to={"/join"}>
-						<span>Join us</span>
-					</Link>
 					<button onClick={darkmodeClick} className="mode-change-button">
 						<FontAwesomeIcon icon={faMoon} className="darkmode-icon" />
 					</button>

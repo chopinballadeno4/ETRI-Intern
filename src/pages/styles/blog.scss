@@ -1,1 +1,8 @@
 @import "../../styles/darkmode";
+
+.blog-wrapper {
+    flex: 1;
+    @include get-color(background-color, maincolor);
+    display: flex;
+    justify-content: center;
+}
