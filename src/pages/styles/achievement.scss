@@ -1,16 +1,63 @@
 @import "../../styles/darkmode";
 
 .achievement-wrapper {
+    @include get-color(background-color, maincolor);
+    width: 100%;
+    flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    @include get-color(background-color, maincolor);
 }
 
 .achievement-main {
-    @include get-color(background-color, content);
-    width: 30%;
-    margin: 30px 0;
+    margin: 20px 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.achievement-side-nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    ul {
+        display: flex;  
+        & .noneclicked-button {
+            @include get-color(background-color, content);
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 40px;
+            @include get-color(border, bordercolor);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            display: grid;
+            place-items: center;
+            span {
+                @include get-color(color, textcolor);
+                font-weight: 300;
+            }
+        }
+        
+        & .clicked-button {
+            @include get-color(background-color, content-clicked-bgcolor);
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 40px;
+            @include get-color(border, bordercolor);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            display: grid;
+            place-items: center;
+            span {
+                @include get-color(color, content-clicked-textcolor);
+                font-weight: bold;
+            }
+        }
+    }
 }
