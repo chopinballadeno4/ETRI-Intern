@@ -1,0 +1,30 @@
+@import "../../styles/darkmode";
+
+.BlogHeaderItem-wrapper {
+    width: 100%;
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include get-color(background-color, content);
+    @include get-color(border, bordercolor);
+    border: 0;
+
+    span {
+        &:first-of-type {
+            padding: 20px 10px;
+           text-align: start;
+           font-size: 20px;
+           @include get-color(color, headercolor);
+           font-weight: 500;
+        }
+
+        &:last-of-type {
+            justify-self: flex-end;
+            text-align: end;
+            opacity: 0.5;
+            padding: 0 10px 10px 0;
+            font-size: 14px; 
+        }
+    }
+}
