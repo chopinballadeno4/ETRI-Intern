@@ -12,6 +12,8 @@ title: "introduce content"
 지능을 개선 확장하는 클라우드 기반 전역 최적 지능 적용 기술을
 개발하고 다중 , 도메인의 실환경을 통해 기술 적용성을 검증함
 
+![img](../static/research1.png)
+
 # 전체 내용
 
 본 연구에서는 기존 로봇 지능의 한계를 극복하기 위해 아래의 4개
@@ -34,6 +36,10 @@ title: "introduce content"
 - 또한, 상기 클라우드 로봇 핵심 인공지능 기술을 복수의 서비스
   도메인을 대상으로 테스트베드와 실환경에서 기술의 적용성을
   검증함
+
+![img](../static/research2.png)
+
+![img](../static/research3.png)
 
 # 1단계
 

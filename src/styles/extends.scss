@@ -41,3 +41,35 @@
     }
        
 }
+
+%html-li {
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+%html-ul {
+    margin: 10px 0;
+    list-style:decimal;
+    list-style-position: inside;
+}
+
+%html-h1 {
+    &:not(:first-child) {
+        margin-top: 50px;
+    }
+    font-size: 30px;
+    @include get-color(color, textcolor);
+    margin: 15px 0;
+}
+
+%html-h2 {
+    font-size: 25px;
+    @include get-color(color, textcolor);
+    margin: 15px 0;
+}
+
+%html-p {
+    line-height: 1.2;
+    font-size: 20px;
+}

@@ -4,7 +4,7 @@ language: "eng"
 title: "introduce content"
 ---
 
-# end goal
+# End goal
 
 By reflecting the user's multi-modal situation in real time, the context
 Robot intelligence that understands and personalizes services, regional adaptive learning technology and
@@ -12,7 +12,9 @@ Through cloud collaboration, global optimized learning results are shared and se
 Cloud-based global optimal intelligence application technology that improves and expands intelligence
 Developed and verified the applicability of the technology through the real environment of multiple domains
 
-# full content
+![img](../static/research1.png)
+
+# Full content
 
 In this study, in order to overcome the limitations of existing robot intelligence, the following four
 Developed cloud robot core artificial intelligence technology consisting of core technologies
@@ -35,7 +37,11 @@ Developed cloud robot core artificial intelligence technology consisting of core
   The applicability of the technology in the test bed and in the real environment for the domain
   verified
 
-# step 1
+![img](../static/research2.png)
+
+![img](../static/research3.png)
+
+# Step 1
 
 ## goal
 
@@ -52,7 +58,7 @@ Developing Adaptive Learning Skills
 - Cluster size analysis and human localization error 6.3 MAE or less
 - Local robot intelligence SW system based on cloud platform interworking
 
-# step 2
+# Step 2
 
 ## goal
 
