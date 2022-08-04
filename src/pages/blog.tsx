@@ -5,6 +5,7 @@ import BlogList from "components/BlogList";
 import BlogHeaderItem from "components/BlogHeaderItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
+import ItemList from "components/ItemList";
 
 function blog() {
 	const blogItem = [
@@ -25,6 +26,24 @@ function blog() {
 		},
 	];
 
+	const blogListItem = [
+		{
+			img: ["basic.jpg", "test.jpg", "test2.jpg"],
+			title: "title1",
+			content: "content1",
+		},
+		{
+			img: ["basic.jpg", "test.jpg", "test2.jpg"],
+			title: "title2",
+			content: "content2",
+		},
+		{
+			img: ["basic.jpg", "test.jpg", "test2.jpg"],
+			title: "title3",
+			content: "content3",
+		},
+	];
+
 	return (
 		<Layout>
 			<div className="blog-wrapper">
@@ -39,7 +58,7 @@ function blog() {
 						))}
 					</div>
 				</section>
-				<BlogList />
+				<ItemList headertype={"blog"} content />
 			</div>
 		</Layout>
 	);

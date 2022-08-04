@@ -10,7 +10,7 @@
 
 .achievement-main {
     margin: 20px 0;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
 }
@@ -18,13 +18,15 @@
 .achievement-side-nav {
     margin-top: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin-bottom: 20px;
     ul {
-        display: flex;  
+        display: flex;
+        justify-content: flex-end;
         & .noneclicked-button {
+            min-width: 120px;
             @include get-color(background-color, content);
-            margin-right: 20px;
+            margin-left: 20px;
             padding: 20px;
             border-radius: 40px;
             @include get-color(border, bordercolor);
@@ -42,8 +44,9 @@
         }
         
         & .clicked-button {
+            min-width: 120px;
             @include get-color(background-color, content-clicked-bgcolor);
-            margin-right: 20px;
+            margin-left: 20px;
             padding: 20px;
             border-radius: 40px;
             @include get-color(border, bordercolor);

@@ -4,12 +4,10 @@ import Layout from "components/Layout";
 import ItemList from "components/ItemList";
 
 function achievement() {
-	const [isIntroduce, setIsIntroduce] = useState(false);
 	const [isDataSet, setIsDataset] = useState(false);
 	const [isSourceCode, setIsSourceCode] = useState(false);
 
 	const resetButton = () => {
-		setIsIntroduce(false);
 		setIsDataset(false);
 		setIsSourceCode(false);
 	};
@@ -31,29 +29,6 @@ function achievement() {
 				<div className="achievement-main">
 					<div className="achievement-side-nav">
 						<ul>
-							<li>
-								{isIntroduce ? (
-									<button
-										className="clicked-button"
-										onClick={() => {
-											resetButton();
-											setIsIntroduce(prev => !prev);
-										}}
-									>
-										<span>introduce</span>
-									</button>
-								) : (
-									<button
-										className="noneclicked-button"
-										onClick={() => {
-											resetButton();
-											setIsIntroduce(prev => !prev);
-										}}
-									>
-										<span>introduce</span>
-									</button>
-								)}
-							</li>
 							<li>
 								{isDataSet ? (
 									<button

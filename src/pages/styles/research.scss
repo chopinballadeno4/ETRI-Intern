@@ -1,9 +1,44 @@
 @import "../../styles/darkmode";
+@import "../../styles/extends.scss";
 
 .research-wrapper {
     @include get-color(background-color, maincolor);
     width: 100%;
     flex: 1;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.research-language {
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    margin: 30px 0;
+}
+
+.research-button {
+    @extend %button;
+    margin-left: 5px;
+}
+
+.research-main {
+    width: 40%;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        &:not(:first-child) {
+            margin-top: 50px;
+        }
+        font-size: 26px;
+        @include get-color(color, textcolor);
+        margin: 15px 0;
+    }
+
+    p {
+        line-height: 1.3;
+        font-size: 18px;
+    }
 }

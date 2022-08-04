@@ -41,7 +41,7 @@ $colors: (
     }
 };
 
-@mixin get-color($property,$color){
+@mixin get-color($property, $color){
     #{$property}: get-color($color);
     @at-root .root.dark & {
       #{$property}: get-color($color, dark);

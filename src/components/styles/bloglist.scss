@@ -1,9 +1,0 @@
-@import "../../styles/darkmode";
-
-.BlogList-wrapper {
-    width: 40%;
-    margin: 20px 0;
-    @include get-color(background-color, content);
-    border-radius: 8px;
-    @include get-color(border, bordercolor);
-}

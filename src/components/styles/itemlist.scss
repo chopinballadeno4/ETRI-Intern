@@ -4,10 +4,11 @@
 //transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 
 .ItemList-wrapper {
-    width: 80%;
+    width: 100%;
     @include get-color(background-color, content);
     height: 100%;
     padding: 20px;
     border-radius: 8px;
     @include get-color(border, bordercolor);
+    box-sizing: border-box;
 }
