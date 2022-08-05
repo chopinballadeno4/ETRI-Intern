@@ -46,21 +46,25 @@
     font-size: 18px;
     line-height: 1.2;
     margin: 10px 0;
+    @include get-color(color, textcolor);
 }
 
 %html-ul {
     margin: 10px 0;
     list-style:decimal;
     list-style-position: inside;
+    @include get-color(color, textcolor);
 }
 
 %html-h1 {
     &:not(:first-child) {
         margin-top: 50px;
+        @include get-color(color, textcolor);
     }
     font-size: 30px;
     @include get-color(color, textcolor);
     margin: 15px 0;
+    @include get-color(color, textcolor);
 }
 
 %html-h2 {
@@ -72,4 +76,5 @@
 %html-p {
     line-height: 1.2;
     font-size: 20px;
+    @include get-color(color, textcolor);
 }

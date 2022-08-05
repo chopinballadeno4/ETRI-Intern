@@ -53,6 +53,15 @@
 }
 
 .gatsby-resp-image-image {
+    @include get-color(background-color, image-padding);
+    padding: 10px;
+    border-radius: 5px;
     object-fit: scale-down;
-    height: auto;
+    height: auto !important;
+    position: static !important;
+}
+
+.gatsby-resp-image-background-image {
+    height: auto ;
+    padding: 0px !important;
 }
