@@ -1,8 +1,12 @@
 import "./styles/board.scss";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import Layout from "components/Layout";
 import { Link } from "gatsby";
 import ItemList from "components/ItemList";
+
+import { config } from "./../firebase";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 function board() {
 	const content = [
@@ -15,6 +19,18 @@ function board() {
 			content: "centent2",
 		},
 	];
+
+	const getItem = async () => {
+		const dbService = getFirestore(initializeApp(config));
+		await addDoc(collection(dbService, "board"), {
+			name: "kim",
+			last: "bae",
+		});
+	}
+
+	useEffect(() => {
+		getItem();
+	}, []);
 
 	return (
 		<Layout>

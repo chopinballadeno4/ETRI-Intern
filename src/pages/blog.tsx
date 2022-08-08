@@ -1,7 +1,7 @@
 import "./styles/blog.scss";
 import React, { FunctionComponent } from "react";
 import Layout from "components/Layout";
-import BlogList from "components/BlogList";
+//import BlogList from "components/BlogList";
 import BlogHeaderItem from "components/BlogHeaderItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
@@ -44,6 +44,41 @@ function blog() {
 		},
 	];
 
+	const content = [
+		{
+			title: "test1",
+			content: "content1",
+		},
+		{
+			title: "test2",
+			content: "centent2",
+		},
+		{
+			title: "test2",
+			content: "centent2",
+		},
+		{
+			title: "test2",
+			content: "centent2",
+		},
+		{
+			title: "test2",
+			content: "centent2",
+		},
+		{
+			title: "test2",
+			content: "centent2",
+		},
+		{
+			title: "test2",
+			content: "centent2",
+		},
+		{
+			title: "test2",
+			content: "centent2",
+		},
+	];
+
 	return (
 		<Layout>
 			<div className="blog-wrapper">
@@ -58,7 +93,9 @@ function blog() {
 						))}
 					</div>
 				</section>
-				<ItemList headertype={"blog"} content />
+				<div className="blog-list">
+					<ItemList headertype={"achievement"} content={content} />
+				</div>
 			</div>
 		</Layout>
 	);

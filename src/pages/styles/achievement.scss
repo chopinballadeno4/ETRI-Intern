@@ -15,52 +15,47 @@
     flex-direction: column;
 }
 
-.achievement-side-nav {
+.achievement-side-list {
     margin-top: 30px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-bottom: 20px;
-    ul {
-        display: flex;
-        justify-content: flex-end;
-        & .noneclicked-button {
-            min-width: 120px;
-            @include get-color(background-color, content);
-            margin-left: 20px;
-            padding: 20px;
-            border-radius: 40px;
-            @include get-color(border, bordercolor);
 
-            &:hover {
-                cursor: pointer;
-            }
+    & .noneclicked-button {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        margin-right: 15px;
 
-            display: grid;
-            place-items: center;
-            span {
-                @include get-color(color, textcolor);
-                font-weight: 300;
-            }
+        &:hover {
+            cursor: pointer;
         }
-        
-        & .clicked-button {
-            min-width: 120px;
-            @include get-color(background-color, content-clicked-bgcolor);
-            margin-left: 20px;
-            padding: 20px;
-            border-radius: 40px;
-            @include get-color(border, bordercolor);
 
-            &:hover {
-                cursor: pointer;
-            }
-
-            display: grid;
-            place-items: center;
-            span {
-                @include get-color(color, content-clicked-textcolor);
-                font-weight: bold;
-            }
+        span {
+            font-size: 19px;
+            opacity: 0.5;
+            @include get-color(color, textcolor);
+            letter-spacing: -1px;
         }
     }
+    
+    & .clicked-button {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        margin-right: 15px;
+
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        span {
+            font-size: 19px;
+            font-weight: bold;
+            @include get-color(color, textcolor);
+            letter-spacing: -1px;
+        }
+    }
+    
 }

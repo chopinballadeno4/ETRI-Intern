@@ -4,3 +4,5 @@ gatsby-node.js
 gatsby-ssr.js
 gulpfile.babel.js
 atoms.ts
+firebase.ts
+board.tsx
