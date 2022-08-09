@@ -1,0 +1,113 @@
+@import "../../styles/darkmode";
+
+.home-wrapper {
+    flex: 1;
+    display: flex;
+    @include get-color(background-color, maincolor);
+    flex-direction: column;
+}
+
+.home-research {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.home-blog {
+    width: 100%;
+}
+
+.home-blog1 {
+    @include get-color(background-color, home-blog1-bgcolor);
+    display: flex;
+    justify-content: center;
+    div {
+        display: flex;
+        width: 50%;
+        padding: 50px 0;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            > span {
+                text-align: center;
+                font-size: 30px;
+                font-weight: 600;
+                word-break: break all;
+                @include get-color(color ,content-h1color);
+                letter-spacing: -0.8px;
+                padding-left: 20px;
+            }
+            button {
+                margin-top: 30px;
+                background-color: transparent;
+                border: 0;
+                padding: 0;
+                cursor: pointer;
+                span {
+                    font-size: 15px;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                    letter-spacing: -0.2px;
+                    @include get-color(color, textcolor);
+                }
+                svg {
+                    background-color: #ef5777;
+                    border-radius: 50px;
+                    font-size: 15px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.home-blog2 {
+    @include get-color(background-color, home-blog2-bgcolor);
+    display: flex;
+    justify-content: center;
+    div {
+        display: flex;
+        width: 50%;
+        padding: 50px 0;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            > span {
+                text-align: center;
+                font-size: 30px;
+                font-weight: 600;
+                @include get-color(color ,content-h1color);
+                letter-spacing: -0.8px;
+                padding-right: 20px;
+            }
+            button {
+                margin-top: 30px;
+                background-color: transparent;
+                border: 0;
+                padding: 0;
+                cursor: pointer;
+                span {
+                    font-size: 14px;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                    letter-spacing: -0.2px;
+                    @include get-color(color, textcolor);
+                }
+                svg {
+                    background-color: #ef5777;
+                    border-radius: 50px;
+                    font-size: 15px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.home-image {
+    height: 300px;
+    object-fit: scale-down;
+}

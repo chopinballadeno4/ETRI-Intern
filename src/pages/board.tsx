@@ -1,31 +1,36 @@
 import "./styles/board.scss";
-import React, { FunctionComponent, useEffect } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import Layout from "components/Layout";
 import { Link } from "gatsby";
 import ItemList from "components/ItemList";
 
 import { config } from "./../firebase";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, updateDoc } from "firebase/firestore";
+
+interface IContent {
+	content: string,
+	id: string,
+	pw: number,
+	title: string,
+}
 
 function board() {
-	const content = [
-		{
-			title: "test1",
-			content: "content1",
-		},
-		{
-			title: "test2",
-			content: "centent2",
-		},
-	];
+	const [content, setContent] = useState<IContent []>([]);
 
 	const getItem = async () => {
 		const dbService = getFirestore(initializeApp(config));
-		await addDoc(collection(dbService, "board"), {
-			name: "kim",
-			last: "bae",
+		const querySnapshot = await getDocs(collection(dbService, "board"));
+		querySnapshot.forEach((doc) => {
+			const tempObj = {
+				content: doc.data().content,
+				id: doc.data().id,
+				pw: doc.data().pw,
+				title: doc.data().title,
+			}
+			setContent([...content, tempObj]);
 		});
+		console.log(content);
 	}
 
 	useEffect(() => {
