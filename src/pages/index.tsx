@@ -10,14 +10,12 @@ function IndexPage() {
 		<Layout>
 			<div className="home-wrapper">
 				<section className="home-research">
-					<StaticImage
-						src="../../static/basic.jpg"
-						className="home-image"
-						alt="img"
-					/>
-					<div>
+					<StaticImage src="../../static/home.jpg" alt="img" />
+					<div className="home-image-text">
 						<span>
-							title1 is the pool gouys because he is black person and face ugly
+							Continuous local adaptation to user response in real environment
+							service situations (Local) Robot intelligence technology
+							development
 						</span>
 						<button>
 							<FontAwesomeIcon icon={faArrowRightLong} />
@@ -34,10 +32,7 @@ function IndexPage() {
 								alt="img"
 							/>
 							<div>
-								<span>
-									title1 is the pool gouys because he is black person and face
-									ugly
-								</span>
+								<span>title1</span>
 								<button>
 									<FontAwesomeIcon icon={faArrowRightLong} />
 									<span>View more</span>
@@ -48,7 +43,7 @@ function IndexPage() {
 					<div className="home-blog2">
 						<div>
 							<div>
-								<span>title1</span>
+								<span>title2</span>
 								<button>
 									<FontAwesomeIcon icon={faArrowRightLong} />
 									<span>View more</span>
