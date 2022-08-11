@@ -5,6 +5,7 @@ import {
 	IGatsbyImageData,
 	StaticImage,
 } from "gatsby-plugin-image";
+import ViewMore from "./Viewmore";
 
 interface IBlogItemNode {
 	node: {
@@ -26,20 +27,24 @@ function BlogHeaderItem({
 	},
 }: IBlogItemNode) {
 	const [imgroute, setImgroute] = useState<string>();
+
 	useEffect(() => {
 		setImgroute(`../../static/${thumbnail}.png`);
-		console.log(imgroute);
+		console.log(thumbnail);
 	}, []);
 
 	return (
 		<div className="BlogHeaderItem-wrapper">
 			<StaticImage
-				src={`../../static/${thumbnail}.png`}
+				src="../../static/blog-1-thumbnail.jpg"
 				className="BlogHeaderItem-image"
 				alt="img"
 			/>
-			<span>{title}</span>
-			<span>{typeof date !== "string" ? date.toDateString() : null}</span>
+			<span id="BlogHeaderItem-title">{title}</span>
+			<ViewMore source="research" />
+			<span id="BlogHeaderItem-date">
+				{typeof date !== "string" ? date.toDateString() : null}
+			</span>
 		</div>
 	);
 }

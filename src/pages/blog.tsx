@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 import ItemList from "components/ItemList";
 import { graphql } from "gatsby";
-import { ViewMore } from "../components/Viewmore";
+import ViewMore from "../components/Viewmore";
 
 interface IBlogNode {
 	node: {
@@ -67,7 +67,7 @@ function blog({
 				<section className="blog-header">
 					<div className="blog-header-span">
 						<FontAwesomeIcon icon={faBookBookmark} className="blog-icon" />
-						<span>Blog</span>
+						<span>New</span>
 					</div>
 					<div className="blog-topic">
 						{bloglist.map(item => (

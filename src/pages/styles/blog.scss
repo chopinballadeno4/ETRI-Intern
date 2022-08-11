@@ -14,11 +14,11 @@
     align-items: center;
     width: 100%;
     @include get-color(background-color, blog-header);
-    padding: 50px 0;
+    padding: 65px 0;
 }
 
 .blog-header-span {
-    padding: 15px 0;
+    padding: 15px 0 25px 0;
     width: 50%;
     display: flex;
     justify-content: flex-start;
@@ -27,7 +27,7 @@
     span {
         @include get-color(color, content-h1color);
         margin-left: 5px;
-        font-size: 30px;
+        font-size: 28px;
         font-weight: 500;
     }
 }
@@ -35,6 +35,8 @@
 .blog-icon {
     @include get-color(color, content-h1color);
     text-align: center;
+    font-size: 20px;
+
 }
 
 .blog-topic {
