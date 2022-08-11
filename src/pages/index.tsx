@@ -4,6 +4,8 @@ import "./styles/index.scss";
 import { StaticImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { navigate } from "gatsby";
+import ViewMore from "../components/Viewmore";
 
 function IndexPage() {
 	return (
@@ -17,10 +19,7 @@ function IndexPage() {
 							service situations (Local) Robot intelligence technology
 							development
 						</span>
-						<button>
-							<FontAwesomeIcon icon={faArrowRightLong} />
-							<span>View more</span>
-						</button>
+						<ViewMore source="research" />
 					</div>
 				</section>
 				<section className="home-blog">
@@ -33,10 +32,7 @@ function IndexPage() {
 							/>
 							<div>
 								<span>title1</span>
-								<button>
-									<FontAwesomeIcon icon={faArrowRightLong} />
-									<span>View more</span>
-								</button>
+								<ViewMore source="research" />
 							</div>
 						</div>
 					</div>
@@ -44,10 +40,7 @@ function IndexPage() {
 						<div>
 							<div>
 								<span>title2</span>
-								<button>
-									<FontAwesomeIcon icon={faArrowRightLong} />
-									<span>View more</span>
-								</button>
+								<ViewMore source="research" />
 							</div>
 							<StaticImage
 								src="../../static/basic.jpg"

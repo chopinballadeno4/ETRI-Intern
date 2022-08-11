@@ -6,28 +6,40 @@ import {
 	StaticImage,
 } from "gatsby-plugin-image";
 
-interface IBlogHeaderItem {
-	img: string;
-	title: string;
-	day: Date;
+interface IBlogItemNode {
+	node: {
+		html?: string;
+		frontmatter: {
+			page: string;
+			language: string;
+			title: string;
+			thumbnail: string;
+			date: string | Date;
+		};
+	};
 }
 
-function BlogHeaderItem({ img, title, day }: IBlogHeaderItem) {
+function BlogHeaderItem({
+	node: {
+		html,
+		frontmatter: { page, language, title, thumbnail, date },
+	},
+}: IBlogItemNode) {
 	const [imgroute, setImgroute] = useState<string>();
 	useEffect(() => {
-		setImgroute(`../../static/${img}.png`);
+		setImgroute(`../../static/${thumbnail}.png`);
 		console.log(imgroute);
 	}, []);
 
 	return (
 		<div className="BlogHeaderItem-wrapper">
 			<StaticImage
-				src="../../static/test2.png"
+				src={`../../static/${thumbnail}.png`}
 				className="BlogHeaderItem-image"
 				alt="img"
 			/>
 			<span>{title}</span>
-			<span>{day.toDateString()}</span>
+			<span>{typeof date !== "string" ? date.toDateString() : null}</span>
 		</div>
 	);
 }

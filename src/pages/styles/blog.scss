@@ -25,7 +25,7 @@
     align-items: center;
 
     span {
-        @include get-color(color, headercolor);
+        @include get-color(color, content-h1color);
         margin-left: 5px;
         font-size: 30px;
         font-weight: 500;
@@ -33,7 +33,7 @@
 }
 
 .blog-icon {
-    @include get-color(color, headercolor);
+    @include get-color(color, content-h1color);
     text-align: center;
 }
 

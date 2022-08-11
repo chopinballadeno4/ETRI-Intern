@@ -1,83 +1,65 @@
 import "./styles/blog.scss";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import Layout from "components/Layout";
 //import BlogList from "components/BlogList";
 import BlogHeaderItem from "components/BlogHeaderItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 import ItemList from "components/ItemList";
+import { graphql } from "gatsby";
+import { ViewMore } from "../components/Viewmore";
 
-function blog() {
-	const blogItem = [
-		{
-			img: "test2",
-			title: "test1",
-			day: new Date(),
-		},
-		{
-			img: "test2",
-			title: "test2",
-			day: new Date(),
-		},
-		{
-			img: "test2",
-			title: "test3",
-			day: new Date(),
-		},
-	];
+interface IBlogNode {
+	node: {
+		html: string;
+		frontmatter: {
+			page: string;
+			language: string;
+			title: string;
+			thumbnail: string;
+			date: string | Date;
+		};
+	};
+}
 
-	const blogListItem = [
-		{
-			img: ["basic.jpg", "test.jpg", "test2.jpg"],
-			title: "title1",
-			content: "content1",
-		},
-		{
-			img: ["basic.jpg", "test.jpg", "test2.jpg"],
-			title: "title2",
-			content: "content2",
-		},
-		{
-			img: ["basic.jpg", "test.jpg", "test2.jpg"],
-			title: "title3",
-			content: "content3",
-		},
-	];
+interface IBlog {
+	data: {
+		allMarkdownRemark: {
+			edges: IBlogNode[];
+		};
+	};
+}
 
-	const content = [
-		{
-			title: "test1",
-			content: "content1",
-		},
-		{
-			title: "test2",
-			content: "centent2",
-		},
-		{
-			title: "test2",
-			content: "centent2",
-		},
-		{
-			title: "test2",
-			content: "centent2",
-		},
-		{
-			title: "test2",
-			content: "centent2",
-		},
-		{
-			title: "test2",
-			content: "centent2",
-		},
-		{
-			title: "test2",
-			content: "centent2",
-		},
-		{
-			title: "test2",
-			content: "centent2",
-		},
-	];
+function blog({
+	data: {
+		allMarkdownRemark: { edges },
+	},
+}: IBlog) {
+	const [bloglist, setBlogList] = useState<IBlogNode[]>([]);
+
+	useEffect(() => {
+		edges.forEach(item => {
+			if (item.node.frontmatter.page === "blog") {
+				const tempObj = { ...item };
+				tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
+				setBlogList([...bloglist, tempObj]);
+			}
+		});
+		// const tempArr = [...bloglist];
+
+		// // 정렬과정 query할 때 정렬해서 가져올 수 있는지
+		// tempArr.sort((a, b) => {
+		// 	if (a.node.frontmatter.date > b.node.frontmatter.date) {
+		// 		return 1;
+		// 	} else if (a.node.frontmatter.date < b.node.frontmatter.date) {
+		// 		return -1;
+		// 	} else {
+		// 		return 0;
+		// 	}
+		// });
+
+		// setBlogList([...tempArr]);
+	}, []);
 
 	return (
 		<Layout>
@@ -88,13 +70,16 @@ function blog() {
 						<span>Blog</span>
 					</div>
 					<div className="blog-topic">
-						{blogItem.map(item => (
+						{bloglist.map(item => (
 							<BlogHeaderItem {...item} />
 						))}
+						{/* <BlogHeaderItem {...bloglist[0]} />
+						<BlogHeaderItem {...bloglist[1]} />
+						<BlogHeaderItem {...bloglist[2]} /> */}
 					</div>
 				</section>
 				<div className="blog-list">
-					<ItemList headertype={"achievement"} content={content} />
+					{/* <ItemList headertype={"achievement"} content={content} /> */}
 				</div>
 			</div>
 		</Layout>
@@ -102,3 +87,22 @@ function blog() {
 }
 
 export default blog;
+
+export const BlogQuery = graphql`
+	query blogQuery {
+		allMarkdownRemark {
+			edges {
+				node {
+					html
+					frontmatter {
+						page
+						language
+						title
+						thumbnail
+						date
+					}
+				}
+			}
+		}
+	}
+`;
