@@ -3,6 +3,11 @@ import { Link } from "gatsby";
 import "./styles/header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import {
+	GatsbyImage,
+	IGatsbyImageData,
+	StaticImage,
+} from "gatsby-plugin-image";
 
 const Header: FunctionComponent = function () {
 	const [isDark, setIsDark] = useState(false);
@@ -32,7 +37,9 @@ const Header: FunctionComponent = function () {
 		<div className="header-wrapper">
 			<header className="header-div">
 				<div>
-					<Link to={"/"}>logo</Link>
+					<Link to={"/"} id="header-logo">
+						<StaticImage src="../../static/logo.png" alt="logo" />
+					</Link>
 				</div>
 				<nav className="header-link">
 					<Link to={"/research"}>
