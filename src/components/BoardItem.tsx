@@ -13,7 +13,7 @@ function BoardItem({ title, content }: IBoardItem) {
 	return (
 		<div className="BoardItem-item">
 			<div className="BoardItem-header">
-				<span to={`/`}>{title}</span>
+				<span>{title}</span>
 				<div className="BoardItem-answer">
 					<FontAwesomeIcon icon={faCommentDots} className="BoardItem-icon" />
 					<span>1</span>

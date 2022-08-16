@@ -1,0 +1,17 @@
+@import "./darkmode";
+
+.BlogHeaderItem-title {
+    padding: 20px 10px;
+    text-align: start;
+    font-size: 20px;
+    @include get-color(color, headercolor);
+    font-weight: 500;
+}
+
+.BlogHeaderItem-date {
+    justify-self: flex-end;
+    text-align: end;
+    opacity: 0.5;
+    padding: 0 10px 10px 0;
+    font-size: 14px; 
+}

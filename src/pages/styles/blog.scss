@@ -13,6 +13,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    //@include get-color(background-image, blog-header);
     @include get-color(background-color, blog-header);
     padding: 65px 0;
 }
@@ -40,13 +41,13 @@
 }
 
 .blog-topic {
-    width: 50%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+
 }
 
 .blog-list {
     width: 50%;
-    margin: 30px 0;
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
