@@ -1,5 +1,5 @@
 import "./styles/blogitem.scss";
-//import "../styles/className.scss";
+import "../styles/className.scss";
 import React, { useEffect, useState } from "react";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import ViewMore from "./ViewMore";
@@ -28,10 +28,9 @@ function BlogItem({
 	},
 }: IBlogItemNode) {
 	return (
-		<div className="BlogItem-wrapper">
+		<div id="BlogItem-wrapper">
 			<GatsbyImage
 				image={thumbnail.childImageSharp.gatsbyImageData}
-				className="BlogHeaderItem-image"
 				alt="img"
 			/>
 			<span className="BlogItem-title">{title}</span>

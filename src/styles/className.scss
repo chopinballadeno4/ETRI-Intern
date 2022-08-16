@@ -1,6 +1,6 @@
 @import "./darkmode";
 
-.BlogHeaderItem-title {
+.BlogItem-title {
     padding: 20px 10px;
     text-align: start;
     font-size: 20px;
@@ -8,7 +8,7 @@
     font-weight: 500;
 }
 
-.BlogHeaderItem-date {
+.BlogItem-date {
     justify-self: flex-end;
     text-align: end;
     opacity: 0.5;

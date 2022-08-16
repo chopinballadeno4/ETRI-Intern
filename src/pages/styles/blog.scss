@@ -41,13 +41,40 @@
 }
 
 .blog-topic {
+    display: flex;
+    width: 50%;
+    #BlogTopic-image {
 
+    }
+
+    #BlogTopic-Text {
+        padding-left: 10%;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+        #BlogTopic-titleID {
+            font-size: 30px;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            text-align: end;
+            padding: 0 10px 10px 0;
+        }
+    }
 }
+
+
 
 .blog-list {
     width: 50%;
     margin: 50px 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
 }

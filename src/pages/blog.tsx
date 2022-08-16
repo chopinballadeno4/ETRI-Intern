@@ -1,4 +1,5 @@
 import "./styles/blog.scss";
+import "../styles/className.scss";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BlogItem from "../components/BlogItem";
@@ -72,26 +73,28 @@ function blog({
 		const result = [];
 		if (bloglist.length > 0) {
 			result.push(
-				<GatsbyImage
-					image={
-						bloglist[0].node.frontmatter.thumbnail.childImageSharp
-							.gatsbyImageData
-					}
-					alt="image"
-				/>,
-			);
-			result.push(
-				<span className="BlogHeaderItem-title">
-					{bloglist[0].node.frontmatter.title}
-				</span>,
-			);
-			result.push(<ViewMore source="research" />);
-			result.push(
-				<span className="BlogHeaderItem-date">
-					{typeof bloglist[0].node.frontmatter.date !== "string"
-						? bloglist[0].node.frontmatter.date.toDateString()
-						: null}
-				</span>,
+				<div id="BlogTopic-image">
+					<GatsbyImage
+						image={
+							bloglist[0].node.frontmatter.thumbnail.childImageSharp
+								.gatsbyImageData
+						}
+						alt="image"
+					/>
+				</div>,
+				<div id="BlogTopic-Text">
+					<span className="BlogItem-title" id="BlogTopic-titleID">
+						{bloglist[0].node.frontmatter.title}
+					</span>
+					<div>
+						<ViewMore source="research" />
+						<span className="BlogItem-date">
+							{typeof bloglist[0].node.frontmatter.date !== "string"
+								? bloglist[0].node.frontmatter.date.toDateString()
+								: null}
+						</span>
+					</div>
+				</div>,
 			);
 		}
 
