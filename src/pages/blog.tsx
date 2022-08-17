@@ -55,18 +55,6 @@ function blog({
 		});
 		console.log(tempArr);
 		setBlogList([...tempArr]);
-		// const tempArr = [...bloglist];
-		// // 정렬과정 query할 때 정렬해서 가져올 수 있는지
-		// tempArr.sort((a, b) => {
-		// 	if (a.node.frontmatter.date > b.node.frontmatter.date) {
-		// 		return 1;
-		// 	} else if (a.node.frontmatter.date < b.node.frontmatter.date) {
-		// 		return -1;
-		// 	} else {
-		// 		return 0;
-		// 	}
-		// });
-		// setBlogList([...tempArr]);
 	}, []);
 
 	const RenderBlogHeader = () => {

@@ -1,13 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "components/Layout";
 import "./styles/index.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
-import { navigate } from "gatsby";
-import ViewMore from "../components/Viewmore";
+import { graphql, navigate } from "gatsby";
+import ViewMore from "../components/ViewMore";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
-function IndexPage() {
+interface IHomeNode {
+	node: {
+		html: string;
+		frontmatter: {
+			page: string;
+			language: string;
+			title: string;
+			thumbnail: {
+				childImageSharp: {
+					gatsbyImageData: IGatsbyImageData;
+				};
+			};
+			date: string | Date;
+		};
+	};
+}
+
+interface IHome {
+	data: {
+		allMarkdownRemark: {
+			edges: IHomeNode[];
+		};
+	};
+}
+
+function IndexPage({
+	data: {
+		allMarkdownRemark: { edges },
+	},
+}: IHome) {
+	const [bloglist, setBlogList] = useState<IHomeNode[]>([]);
+
+	useEffect(() => {
+		let tempArr: IHomeNode[] = [];
+		edges.forEach(item => {
+			if (item.node.frontmatter.page === "blog") {
+				const tempObj = { ...item };
+				tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
+				//setBlogList([...bloglist, tempObj]);
+				tempArr = [...tempArr, tempObj];
+				console.log(tempObj);
+			}
+		});
+		console.log(tempArr);
+		setBlogList([...tempArr]);
+	}, []);
+
 	return (
 		<Layout>
 			<div className="home-wrapper">
@@ -25,13 +70,16 @@ function IndexPage() {
 				<section className="home-blog">
 					<div className="home-blog1">
 						<div>
-							<StaticImage
-								src="../../static/basic.jpg"
+							<GatsbyImage
+								image={
+									bloglist[0]?.node.frontmatter.thumbnail.childImageSharp
+										.gatsbyImageData
+								}
 								className="home-image"
 								alt="img"
 							/>
 							<div>
-								<span>title1</span>
+								<span>{bloglist[0]?.node.frontmatter.title}</span>
 								<ViewMore source="research" />
 							</div>
 						</div>
@@ -39,11 +87,14 @@ function IndexPage() {
 					<div className="home-blog2">
 						<div>
 							<div>
-								<span>title2</span>
+								<span>{bloglist[1]?.node.frontmatter.title}</span>
 								<ViewMore source="research" />
 							</div>
-							<StaticImage
-								src="../../static/basic.jpg"
+							<GatsbyImage
+								image={
+									bloglist[1]?.node.frontmatter.thumbnail.childImageSharp
+										.gatsbyImageData
+								}
 								className="home-image"
 								alt="img"
 							/>
@@ -56,3 +107,28 @@ function IndexPage() {
 }
 
 export default IndexPage;
+
+export const HomeQuery = graphql`
+	query homeQuery {
+		allMarkdownRemark(
+			sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+		) {
+			edges {
+				node {
+					html
+					frontmatter {
+						page
+						language
+						title
+						thumbnail {
+							childImageSharp {
+								gatsbyImageData(width: 768, height: 400)
+							}
+						}
+						date(formatString: "YYYY.MM.DD.")
+					}
+				}
+			}
+		}
+	}
+`;
