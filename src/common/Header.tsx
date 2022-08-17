@@ -51,11 +51,11 @@ const Header: FunctionComponent = function () {
 					<Link to={"/blog"}>
 						<span>Blog</span>
 					</Link>
-					<Link to={"/board"}>
-						<span>Board</span>
-					</Link>
 					<Link to={"/people"}>
 						<span>People</span>
+					</Link>
+					<Link to={"/about"}>
+						<span>About</span>
 					</Link>
 					<button onClick={darkmodeClick} className="mode-change-button">
 						<FontAwesomeIcon icon={faMoon} className="darkmode-icon" />
