@@ -3,10 +3,14 @@ import "../styles/className.scss";
 import React, { useEffect, useState } from "react";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import ViewMore from "./ViewMore";
+import { node } from "prop-types";
 
 interface IBlogItemNode {
 	node: {
 		html: string;
+		fields: {
+			slug: string;
+		};
 		frontmatter: {
 			page: string;
 			language: string;
@@ -21,22 +25,19 @@ interface IBlogItemNode {
 	};
 }
 
-function BlogItem({
-	node: {
-		html,
-		frontmatter: { page, language, title, thumbnail, date },
-	},
-}: IBlogItemNode) {
+function BlogItem({ node }: IBlogItemNode) {
 	return (
 		<div id="BlogItem-wrapper">
 			<GatsbyImage
-				image={thumbnail.childImageSharp.gatsbyImageData}
+				image={node.frontmatter.thumbnail.childImageSharp.gatsbyImageData}
 				alt="img"
 			/>
-			<span className="BlogItem-title">{title}</span>
-			<ViewMore source="research" />
+			<span className="BlogItem-title">{node.frontmatter.title}</span>
+			<ViewMore node={node} />
 			<span className="BlogItem-date">
-				{typeof date !== "string" ? date.toDateString() : null}
+				{typeof node.frontmatter.date !== "string"
+					? node.frontmatter.date.toDateString()
+					: null}
 			</span>
 		</div>
 	);

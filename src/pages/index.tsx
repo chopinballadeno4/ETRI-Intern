@@ -2,13 +2,18 @@ import React, { useEffect, useState } from "react";
 import Layout from "components/Layout";
 import "./styles/index.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import { graphql, navigate } from "gatsby";
+import { graphql, navigate, Link } from "gatsby";
 import ViewMore from "../components/ViewMore";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 interface IHomeNode {
 	node: {
 		html: string;
+		fields: {
+			slug: string;
+		};
 		frontmatter: {
 			page: string;
 			language: string;
@@ -64,7 +69,10 @@ function IndexPage({
 							service situations (Local) Robot intelligence technology
 							development
 						</span>
-						<ViewMore source="research" />
+						<Link to={"/research"} className="ViewMore_Link">
+							<FontAwesomeIcon icon={faArrowRightLong} />
+							<span>View more</span>
+						</Link>
 					</div>
 				</section>
 				<section className="home-blog">
@@ -80,7 +88,7 @@ function IndexPage({
 							/>
 							<div>
 								<span>{bloglist[0]?.node.frontmatter.title}</span>
-								<ViewMore source="research" />
+								<ViewMore node={bloglist[0]?.node} />
 							</div>
 						</div>
 					</div>
@@ -88,7 +96,7 @@ function IndexPage({
 						<div>
 							<div>
 								<span>{bloglist[1]?.node.frontmatter.title}</span>
-								<ViewMore source="research" />
+								<ViewMore node={bloglist[1]?.node} />
 							</div>
 							<GatsbyImage
 								image={
@@ -116,6 +124,9 @@ export const HomeQuery = graphql`
 			edges {
 				node {
 					html
+					fields {
+						slug
+					}
 					frontmatter {
 						page
 						language

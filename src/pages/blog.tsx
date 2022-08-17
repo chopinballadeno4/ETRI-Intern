@@ -13,6 +13,9 @@ import "../styles/className.scss";
 interface IBlogNode {
 	node: {
 		html: string;
+		fields: {
+			slug: string;
+		};
 		frontmatter: {
 			page: string;
 			language: string;
@@ -50,10 +53,8 @@ function blog({
 				tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
 				//setBlogList([...bloglist, tempObj]);
 				tempArr = [...tempArr, tempObj];
-				console.log(tempObj);
 			}
 		});
-		console.log(tempArr);
 		setBlogList([...tempArr]);
 	}, []);
 
@@ -75,7 +76,7 @@ function blog({
 						{bloglist[0].node.frontmatter.title}
 					</span>
 					<div>
-						<ViewMore source="research" />
+						<ViewMore node={bloglist[0]?.node} />
 						<span className="BlogItem-date">
 							{typeof bloglist[0].node.frontmatter.date !== "string"
 								? bloglist[0].node.frontmatter.date.toDateString()
@@ -123,6 +124,9 @@ export const BlogQuery = graphql`
 			edges {
 				node {
 					html
+					fields {
+						slug
+					}
 					frontmatter {
 						page
 						language

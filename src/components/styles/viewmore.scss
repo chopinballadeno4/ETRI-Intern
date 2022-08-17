@@ -1,10 +1,11 @@
 @import "../../styles/darkmode";
 
-.ViewMore_button {
+.ViewMore_Link {
     margin-top: 30px;
     background-color: transparent;
     border: 0;
     padding: 0;
+    text-decoration: none;
     cursor: pointer;
     span {
         font-size: 15px;
@@ -19,5 +20,6 @@
         border-radius: 50px;
         font-size: 15px;
         margin-right: 5px;
+        color: #23272B;
     }
 }

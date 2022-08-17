@@ -1,24 +1,35 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
-import { navigate } from "gatsby";
+import { Link, navigate } from "gatsby";
 import "./styles/viewmore.scss";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 
-type ViewMore_type = {
-	source: string;
-};
+interface IViewMore {
+	node: {
+		html: string;
+		fields: {
+			slug: string;
+		};
+		frontmatter: {
+			page: string;
+			language: string;
+			title: string;
+			thumbnail: {
+				childImageSharp: {
+					gatsbyImageData: IGatsbyImageData;
+				};
+			};
+			date: string | Date;
+		};
+	};
+}
 
-function ViewMore({ source }: ViewMore_type) {
+function ViewMore({ node }: IViewMore) {
 	return (
-		<button
-			onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-				event.preventDefault();
-				void navigate(`/${source}`);
-			}}
-			className="ViewMore_button"
-		>
+		<Link to={node?.fields.slug} className="ViewMore_Link">
 			<FontAwesomeIcon icon={faArrowRightLong} />
 			<span>View more</span>
-		</button>
+		</Link>
 	);
 }
 
