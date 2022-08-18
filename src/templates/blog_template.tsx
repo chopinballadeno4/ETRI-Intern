@@ -1,5 +1,8 @@
+import Layout from "components/Layout";
 import { graphql } from "gatsby";
-import { IGatsbyImageData } from "gatsby-plugin-image";
+import "./styles/blogtemplate.scss";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { useEffect, useState } from "react";
 
 interface IBlogTemplateNode {
 	node: {
@@ -16,7 +19,7 @@ interface IBlogTemplateNode {
 					gatsbyImageData: IGatsbyImageData;
 				};
 			};
-			date: string | Date;
+			date: string;
 		};
 	};
 }
@@ -34,8 +37,45 @@ function BlogTemplate({
 		allMarkdownRemark: { edges },
 	},
 }: IBlogTemplate) {
-	console.log(edges);
-	return <h1>is tomholy</h1>;
+	const [blogitem, setBlogItem] = useState<IBlogTemplateNode>();
+
+	useEffect(() => {
+		setBlogItem(edges[0]);
+	});
+
+	const RenderThumbnail = () => {
+		if (blogitem !== undefined) {
+			return (
+				<div id="blogtemplate-thumbnail">
+					<GatsbyImage
+						image={
+							blogitem.node.frontmatter.thumbnail.childImageSharp
+								.gatsbyImageData
+						}
+						alt="thumbnail"
+					/>
+				</div>
+			);
+		} else {
+			return null;
+		}
+	};
+
+	return (
+		<Layout>
+			<div id="blogtemplate-wrapper">
+				<main id="blogtemplate-main">
+					<div id="blogtemplate-title">
+						<span>{blogitem?.node.frontmatter.title}</span>
+					</div>
+					<div id="blogtemplate-date">
+						<span>{blogitem?.node.frontmatter.date}</span>
+					</div>
+					{RenderThumbnail()}
+				</main>
+			</div>
+		</Layout>
+	);
 }
 
 export default BlogTemplate;

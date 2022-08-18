@@ -43,9 +43,6 @@
 .blog-topic {
     display: flex;
     width: 50%;
-    #BlogTopic-image {
-
-    }
 
     #BlogTopic-Text {
         padding-left: 10%;
@@ -61,10 +58,6 @@
         div {
             display: flex;
             flex-direction: column;
-        }
-        button {
-            text-align: end;
-            padding: 0 10px 10px 0;
         }
     }
 }
