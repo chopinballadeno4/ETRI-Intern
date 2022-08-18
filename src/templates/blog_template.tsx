@@ -38,10 +38,35 @@ function BlogTemplate({
 	},
 }: IBlogTemplate) {
 	const [blogitem, setBlogItem] = useState<IBlogTemplateNode>();
+	const [html, setHtml] = useState<string>("");
+	const [isKor, setIsKor] = useState(false);
 
 	useEffect(() => {
 		setBlogItem(edges[0]);
-	});
+		edges.map(item => {
+			if (item.node.frontmatter.page === "blog") {
+				if (item.node.frontmatter.language === "kor" && isKor) {
+					setHtml(item.node.html);
+				}
+				if (item.node.frontmatter.language === "eng" && !isKor) {
+					setHtml(item.node.html);
+				}
+			}
+		});
+		console.log(html);
+	}, [isKor]);
+
+	const korClick = () => {
+		if (!isKor) {
+			setIsKor(!isKor);
+		}
+	};
+
+	const engClick = () => {
+		if (isKor) {
+			setIsKor(!isKor);
+		}
+	};
 
 	const RenderThumbnail = () => {
 		if (blogitem !== undefined) {
@@ -69,9 +94,21 @@ function BlogTemplate({
 						<span>{blogitem?.node.frontmatter.title}</span>
 					</div>
 					<div id="blogtemplate-date">
-						<span>{blogitem?.node.frontmatter.date}</span>
+						<button className="research-button" onClick={korClick}>
+							Kor
+						</button>
+						<button className="research-button" onClick={engClick}>
+							Eng
+						</button>
+						<div>
+							<span>{blogitem?.node.frontmatter.date}</span>
+						</div>
 					</div>
 					{RenderThumbnail()}
+					<main
+						className="blogtemplate-html"
+						dangerouslySetInnerHTML={{ __html: html }}
+					></main>
 				</main>
 			</div>
 		</Layout>
