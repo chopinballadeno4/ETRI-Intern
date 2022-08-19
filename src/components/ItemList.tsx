@@ -16,7 +16,7 @@ interface IAchievementNode {
 interface IItemList {
 	headertype: string;
 	category: string;
-	content?: IAchievementNode;
+	content: IAchievementNode;
 }
 
 function ItemList({ headertype, category, content }: IItemList) {
@@ -24,7 +24,7 @@ function ItemList({ headertype, category, content }: IItemList) {
 		return (
 			<main
 				className="ItemList-html"
-				dangerouslySetInnerHTML={{ __html: content?.node?.html }}
+				dangerouslySetInnerHTML={{ __html: content.node.html }}
 			></main>
 		);
 	};

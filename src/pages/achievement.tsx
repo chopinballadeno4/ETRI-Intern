@@ -62,6 +62,20 @@ function achievement({
 		setDataSet(false);
 	};
 
+	const RenderItemList = () => {
+		if (achievement !== undefined) {
+			return (
+				<ItemList
+					headertype={"achievement"}
+					category={category}
+					content={achievement}
+				/>
+			);
+		} else {
+			return null;
+		}
+	};
+
 	return (
 		<Layout>
 			<div className="achievement-wrapper">
@@ -183,11 +197,7 @@ function achievement({
 							)}
 						</li>
 					</ul>
-					<ItemList
-						headertype={"achievement"}
-						category={category}
-						content={achievement}
-					/>
+					{RenderItemList()}
 				</div>
 			</div>
 		</Layout>
