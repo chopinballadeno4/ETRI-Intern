@@ -1,5 +1,4 @@
 import "./styles/blog.scss";
-import "../styles/className.scss";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BlogItem from "../components/BlogItem";
@@ -8,7 +7,7 @@ import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import ViewMore from "../components/ViewMore";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import "../styles/className.scss";
+import "../styles/common.scss";
 
 interface IBlogNode {
 	node: {

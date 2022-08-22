@@ -26,13 +26,13 @@ function people({
 						<span>
 							Electronics and Telecommunications Research Institute, South Korea
 						</span>
-						<PersonList posts={edges} />
+						<PersonList type="ETRI" posts={edges} />
 					</section>
 					<section className="people-group2">
 						<span>
 							Korea Advanced Institute of Science and Technology, South Korea
 						</span>
-						{/* <PersonList posts={edges} /> */}
+						<PersonList type="KAIST" posts={edges} />
 					</section>
 				</main>
 			</div>

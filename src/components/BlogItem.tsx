@@ -1,5 +1,5 @@
 import "./styles/blogitem.scss";
-import "../styles/className.scss";
+import "../styles/common.scss";
 import React, { useEffect, useState } from "react";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import ViewMore from "./ViewMore";

@@ -57,20 +57,42 @@
 }
 
 %html-h1 {
-    &:not(:first-child) {
-        margin-top: 50px;
-        @include get-color(color, textcolor);
-    }
+    // &:not(:first-child) {
+    //     margin-top: 50px;
+    //     @include get-color(color, textcolor);
+    // }
     font-size: 30px;
     @include get-color(color, textcolor);
     margin: 15px 0;
-    @include get-color(color, textcolor);
+    font-weight: bold;
 }
 
 %html-h2 {
-    font-size: 25px;
+    font-size: 27px;
     @include get-color(color, textcolor);
     margin: 15px 0;
+    font-weight: bold;
+}
+
+%html-h3 {
+    font-size: 24px;
+    @include get-color(color, textcolor);
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+%html-h4 {
+    font-size: 21px;
+    @include get-color(color, textcolor);
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+%html-h5 {
+    font-size: 18px;
+    @include get-color(color, textcolor);
+    margin: 15px 0;
+    font-weight: bold;
 }
 
 %html-p {

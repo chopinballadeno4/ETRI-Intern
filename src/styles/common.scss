@@ -1,4 +1,5 @@
 @import "./darkmode";
+@import "./extends.scss";
 
 .BlogItem-title {
     padding: 20px 10px;
@@ -14,4 +15,25 @@
     opacity: 0.5;
     padding: 0 10px 10px 0;
     font-size: 14px; 
+}
+
+.html-style {
+    h1 {
+        @extend %html-h1;
+    }
+    
+    h2 {
+        @extend %html-h2;
+    }
+
+    p {
+        @extend %html-p;
+    }
+
+    ul {
+        @extend %html-ul;
+    }
+    li {
+        @extend %html-li;
+    }
 }

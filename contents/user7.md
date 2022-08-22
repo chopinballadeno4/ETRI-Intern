@@ -1,9 +1,9 @@
 ---
 page: "people"
-order: 1
+order: 2
 name: "Lee Seungik"
 contact: "the_silee@etri.re.kr"
 work: "Open world domain adaptation"
-department: "ETRI"
+department: "KAIST"
 image: "../static/basic.jpg"
 ---
