@@ -7,7 +7,7 @@
     width: 100%;
     @include get-color(background-color, content);
     height: 100%;
-    padding: 20px;
+    padding: 40px 20px;
     border-radius: 8px;
     @include get-color(border, bordercolor);
     box-sizing: border-box;
@@ -25,7 +25,7 @@
             tr {
                 width: 100%;
                 display: grid;
-                grid-template-columns: repeat(5, 1fr);
+                grid-template-columns: repeat(11, 1fr);
                 th {
                     font-size: 20px;
                 }
@@ -35,8 +35,8 @@
             width: 100%;
             tr {
                 display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                border-bottom: 1px solid black;
+                grid-template-columns: repeat(11, 1fr);
+                @include get-color(border-bottom, bordercolor);
                 padding: 20px 0;
 
                 td {

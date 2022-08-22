@@ -40,6 +40,7 @@ function BlogTemplate({
 	const [blogitem, setBlogItem] = useState<IBlogTemplateNode>();
 	const [html, setHtml] = useState<string>("");
 	const [isKor, setIsKor] = useState(false);
+	console.log(edges);
 
 	useEffect(() => {
 		setBlogItem(edges[0]);
@@ -94,15 +95,15 @@ function BlogTemplate({
 						<span>{blogitem?.node.frontmatter.title}</span>
 					</div>
 					<div id="blogtemplate-date">
+						<div>
+							<span>{blogitem?.node.frontmatter.date}</span>
+						</div>
 						<button className="research-button" onClick={korClick}>
 							Kor
 						</button>
 						<button className="research-button" onClick={engClick}>
 							Eng
 						</button>
-						<div>
-							<span>{blogitem?.node.frontmatter.date}</span>
-						</div>
 					</div>
 					{RenderThumbnail()}
 					<main

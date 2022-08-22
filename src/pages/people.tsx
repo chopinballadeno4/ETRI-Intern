@@ -1,8 +1,6 @@
 import "./styles/people.scss";
 import Layout from "components/Layout";
 import React, { FunctionComponent, useEffect } from "react";
-import PersonInfo from "components/PersonInfo";
-import { IGatsbyImageData } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { IPersonListType } from "components/types/PersonInfo.types";
 import PersonList from "../components/PersonList";
@@ -34,7 +32,7 @@ function people({
 						<span>
 							Korea Advanced Institute of Science and Technology, South Korea
 						</span>
-						<PersonList posts={edges} />
+						{/* <PersonList posts={edges} /> */}
 					</section>
 				</main>
 			</div>
@@ -42,17 +40,27 @@ function people({
 	);
 }
 
-export const getPostList = graphql`
-	query getPostList {
-		allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___name] }) {
+export const getPeopleList = graphql`
+	query getPeopleList {
+		allMarkdownRemark(
+			filter: { frontmatter: { page: { eq: "people" } } }
+			sort: { order: ASC, fields: [frontmatter___order] }
+		) {
 			edges {
 				node {
 					id
 					frontmatter {
+						page
+						order
 						name
 						contact
-						department
 						work
+						department
+						image {
+							childImageSharp {
+								gatsbyImageData
+							}
+						}
 					}
 				}
 			}

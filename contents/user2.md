@@ -1,6 +1,9 @@
 ---
-name: "Bae sungmin"
-contact: "qo98333@naver.com"
+page: "people"
+order: 2
+name: "Woo-Ri Ko"
+contact: "wrko@etri.re.kr"
+work: "understand the action"
 department: "ETRI"
-work: "DBA"
+image: "../static/people2.png"
 ---

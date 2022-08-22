@@ -1,7 +1,6 @@
 import "./styles/itemlist.scss";
 import { boardcontent } from "./types/ItemList.types";
 import React from "react";
-import AchievementItem from "./AchievementItem";
 
 interface IAchievementNode {
 	node: {

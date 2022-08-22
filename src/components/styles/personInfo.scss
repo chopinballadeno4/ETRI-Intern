@@ -10,11 +10,11 @@
     align-items: center;
     justify-content: center;
     line-height: 30px;
-    
     span {
         &:first-of-type {
             font-size: 20px;
         }
+        text-align: center;
         @include get-color(color, textcolor);
     }
 }
