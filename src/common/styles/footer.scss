@@ -8,11 +8,9 @@
     justify-content: center;
     align-items: center;
 
-
-
     span {
         &:first-child {
-            @include get-color(color, commontextcolor);
+            color: #fff;
         }
         &:last-child {
             @include get-color(color, opacitycolor);

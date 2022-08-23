@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 @import "../../styles/darkmode";
 
-.header-wrapper {
+#header-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
     padding: 20px;
     @include get-color(background-color, headercolor);
     position: relative;
+    @media screen {
+        
+    }
 }
 
-.header-div {
-    //background-color: #0abde3; // need delete
+#header-main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width:60%;
     min-width: 1000px;
     max-width: 1500px;
-    height: 100%;
-
+    width: 50%;
 }
 
 #header-logo {
@@ -33,13 +33,17 @@
     }
 }
 
-.header-link {
+#header-link {
     display: flex;
     align-items: center;
-    height: 100%;
+    span {
+        color: #fff;
+        font-size: 16px;
+        outline: none;
+    }  
 }
 
-.header-link :link {
+#header-link :link {
     margin-left: 50px;
     text-decoration: none;
 
@@ -49,21 +53,15 @@
     }
 }
 
-.header-link span {
-    @include get-color(color, commontextcolor);
-    font-size: 16px;
-    outline: none;    
-}
-
-.darkmode-icon {
+#darkmode-icon {
     font-size: 30px;
     @include get-color(color, togglecolor);
 }
 
-.mode-change-button {
+#header-button {
     background-color: transparent;
     border: 0;
-    margin-left: 30px;
+    margin-left: 50px;
 
     &:hover {
         cursor: pointer;
