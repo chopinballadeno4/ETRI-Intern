@@ -1,4 +1,5 @@
 import "./styles/research.scss";
+import "../styles/common.scss";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import Layout from "components/Layout";
 import { graphql } from "gatsby";
@@ -31,16 +32,13 @@ function research({
 	const [isKor, setIsKor] = useState(false);
 	useEffect(() => {
 		edges.map(item => {
-			if (item.node.frontmatter.page === "research") {
-				if (item.node.frontmatter.language === "kor" && isKor) {
-					setHtml(item.node.html);
-				}
-				if (item.node.frontmatter.language === "eng" && !isKor) {
-					setHtml(item.node.html);
-				}
+			if (item.node.frontmatter.language === "kor" && isKor) {
+				setHtml(item.node.html);
+			}
+			if (item.node.frontmatter.language === "eng" && !isKor) {
+				setHtml(item.node.html);
 			}
 		});
-		console.log(html);
 	}, [isKor]);
 
 	const korClick = () => {
@@ -57,17 +55,21 @@ function research({
 
 	return (
 		<Layout>
-			<div className="research-wrapper">
-				<div className="research-language">
-					<button className="research-button" onClick={korClick}>
+			<div className="Wrapper">
+				<div id="research-language">
+					<button
+						className="language-button"
+						onClick={korClick}
+						style={{ marginRight: "10px" }}
+					>
 						Kor
 					</button>
-					<button className="research-button" onClick={engClick}>
+					<button className="language-button" onClick={engClick}>
 						Eng
 					</button>
 				</div>
 				<main
-					className="research-main"
+					id="research-html"
 					dangerouslySetInnerHTML={{ __html: html }}
 				></main>
 			</div>
@@ -77,14 +79,13 @@ function research({
 
 export const researchQuery = graphql`
 	query researchQuery {
-		allMarkdownRemark {
+		allMarkdownRemark(filter: { frontmatter: { page: { eq: "research" } } }) {
 			edges {
 				node {
 					html
 					frontmatter {
 						page
 						language
-						title
 					}
 				}
 			}

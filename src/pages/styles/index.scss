@@ -1,45 +1,37 @@
 @import "../../styles/darkmode";
+@import "../../styles/extends.scss";
 
-.home-wrapper {
-    flex: 1;
-    display: flex;
-    @include get-color(background-color, maincolor);
-    flex-direction: column;
-}
-
-.home-research {
+#home-research {
     width: 100%;
     position: relative;
 }
 
-.home-image-text {
+#home-blog {
+    width: 100%;
+}
+
+#home-research-text {
     width: 600px;
-    transform: translate(-50%, -50%);
+    min-width: 600px;
+    transform: translate(-50%, -70%);
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    //z-index: 1;
-    top: 50vh;
-    left: 50vw;
+    top: 50%;
+    left: 50%;
     > span {
-        text-align: center;
         font-size: 50px;
         font-weight: 600;
-        word-break: break all;
-        @include get-color(color ,content-h1color);
-        letter-spacing: -0.8px;
+        @extend %header-text;
     }
 }
 
-.home-blog {
-    width: 100%;
-}
-
-.home-blog1 {
+#home-blog1 {
     @include get-color(background-color, home-blog1-bgcolor);
     display: flex;
     justify-content: center;
+    min-width: 1024px;
     div {
         display: flex;
         width: 50%;
@@ -49,23 +41,21 @@
             flex-direction: column;
             align-items: center;
             > span {
-                text-align: center;
                 font-size: 30px;
                 font-weight: 600;
-                word-break: break all;
-                @include get-color(color ,content-h1color);
-                letter-spacing: -0.8px;
-                padding-left: 20px;
+                padding-left: 30px;
+                @extend %header-text;
             }
             
         }
     }
 }
 
-.home-blog2 {
+#home-blog2 {
     @include get-color(background-color, home-blog2-bgcolor);
     display: flex;
     justify-content: center;
+    min-width: 1024px;
     div {
         display: flex;
         width: 50%;
@@ -75,18 +65,13 @@
             flex-direction: column;
             align-items: center;
             > span {
-                text-align: center;
                 font-size: 30px;
                 font-weight: 600;
-                @include get-color(color ,content-h1color);
-                letter-spacing: -0.8px;
-                padding-right: 20px;
+                padding-right: 30px;
+                @extend %header-text;
             }
             
         }
     }
 }
 
-.home-image {
-    object-fit: scale-down;
-}

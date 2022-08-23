@@ -1,6 +1,7 @@
 import Layout from "components/Layout";
 import { graphql } from "gatsby";
 import "./styles/blogtemplate.scss";
+import "../styles/common.scss";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { useEffect, useState } from "react";
 
@@ -98,10 +99,10 @@ function BlogTemplate({
 						<div>
 							<span>{blogitem?.node.frontmatter.date}</span>
 						</div>
-						<button className="research-button" onClick={korClick}>
+						<button className="language-button" onClick={korClick}>
 							Kor
 						</button>
-						<button className="research-button" onClick={engClick}>
+						<button className="language-button" onClick={engClick}>
 							Eng
 						</button>
 					</div>

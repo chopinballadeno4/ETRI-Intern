@@ -8,16 +8,14 @@
     padding: 20px;
     @include get-color(background-color, headercolor);
     position: relative;
-    @media screen {
-        
-    }
+
 }
 
 #header-main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    min-width: 1000px;
+    min-width: 1024px;
     max-width: 1500px;
     width: 50%;
 }

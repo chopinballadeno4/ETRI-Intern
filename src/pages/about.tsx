@@ -57,10 +57,10 @@ function about({
 			<div className="about-wrapper">
 				<div className="about-main">
 					<div id="blogtemplate-date">
-						<button className="research-button" onClick={korClick}>
+						<button className="language-button" onClick={korClick}>
 							Kor
 						</button>
-						<button className="research-button" onClick={engClick}>
+						<button className="language-button" onClick={engClick}>
 							Eng
 						</button>
 					</div>

@@ -1,7 +1,6 @@
 ---
 page: "research"
 language: "eng"
-title: "introduce content"
 ---
 
 # End goal
@@ -37,9 +36,9 @@ Developed cloud robot core artificial intelligence technology consisting of core
   The applicability of the technology in the test bed and in the real environment for the domain
   verified
 
-![img](../static/research2.png)
+![img](../static/research4.png)
 
-![img](../static/research3.png)
+![img](../static/research5.png)
 
 # Step 1
 

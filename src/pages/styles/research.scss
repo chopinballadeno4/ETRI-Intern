@@ -1,67 +1,18 @@
 @import "../../styles/darkmode";
 @import "../../styles/extends.scss";
 
-.research-wrapper {
-    @include get-color(background-color, maincolor);
-    width: 100%;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column
-}
-
-.research-language {
+#research-language {
     display: flex;
     justify-content: flex-end;
     width: 40%;
     margin: 30px 0;
 }
 
-.research-button {
-    @extend %button;
-    margin-left: 5px;
-}
 
-.research-main {
+#research-html {
     width: 40%;
     margin: 30px 0 100px 0;
     display: flex;
     flex-direction: column;
-
-    h1 {
-        @extend %html-h1;
-    }
-    
-    h2 {
-        @extend %html-h2;
-    }
-
-    p {
-        @extend %html-p;
-    }
-
-    ul {
-        @extend %html-ul;
-    }
-    li {
-        @extend %html-li;
-    }
-}
-
-.gatsby-resp-image-wrapper {
-    margin: 50px 0;
-}
-
-.gatsby-resp-image-image {
-    @include get-color(background-color, image-padding);
-    padding: 10px;
-    border-radius: 5px;
-    object-fit: scale-down;
-    height: auto !important;
-    position: static !important;
-}
-
-.gatsby-resp-image-background-image {
-    height: auto ;
-    padding: 0px !important;
+    @extend %html-style;
 }

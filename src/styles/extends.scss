@@ -5,7 +5,7 @@
     text-decoration: none;
     width: 50px;
     height: 33px;
-    @include get-color(color, reversetextcolor);
+    @include get-color(color, buttontextcolor);
     display: grid;
     place-items: center;
     border-radius: 8px;
@@ -14,89 +14,86 @@
     cursor: pointer;
 }
 
-%boardwriteform-input {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
+%header-text {
+    @include get-color(color ,content-h1color);
+    word-spacing: 5px;
+    letter-spacing: -1px;
+    word-break: break all;
+    text-align: center;
+}
 
-    span {
-        font-size: 17px;
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+%html-style {
+    h1 {
+        font-size: 36px;
         @include get-color(color, textcolor);
-        opacity: 0.7;
-        padding: 5px;
+        margin: 15px 0;
+        font-weight: bold;
+        word-spacing: 5px;
+        letter-spacing: -1px;
     }
 
-    textarea {
-        background-color: transparent;
-        height: 100%;
-        width: 100%;
-        border: 0;
-        @include get-color(border, bordercolor);
-        &:valid {
-            @include get-color(color, textcolor);
-        }
-        text-align: left start;
-        word-wrap: break-word;
-        resize: none;
+    h2 {
+        font-size: 33px;
+        @include get-color(color, textcolor);
+        margin: 15px 0;
+        font-weight: bold;
+        word-spacing: 5px;
+        letter-spacing: -1px;
     }
-       
+
+    h3 {
+        font-size: 30px;
+        @include get-color(color, textcolor);
+        margin: 15px 0;
+        font-weight: bold;
+        word-spacing: 5px;
+        letter-spacing: -1px;
+    }
+
+    h4 {
+        font-size: 27px;
+        @include get-color(color, textcolor);
+        margin: 15px 0;
+        font-weight: bold;
+        word-spacing: 5px;
+        letter-spacing: -1px;
+    }
+
+    h5 {
+        font-size: 24px;
+        @include get-color(color, textcolor);
+        margin: 15px 0;
+        font-weight: bold;
+        word-spacing: 5px;
+        letter-spacing: -1px;
+    }
+
+    ul {
+        margin: 10px 0;
+        list-style:decimal;
+        list-style-position: inside;
+        @include get-color(color, textcolor);
+        word-spacing: 5px;
+        letter-spacing: -1px;
+    }
+
+    p {
+        line-height: 1.2;
+        font-size: 20px;
+        @include get-color(color, textcolor);
+        word-spacing: 5px;
+        letter-spacing: -1px;
+    }
+
+    li {
+        font-size: 18px;
+        line-height: 1.2;
+        margin: 10px 0;
+        @include get-color(color, textcolor);
+        word-spacing: 5px;
+        letter-spacing: -1px;
+    }
 }
 
-%html-li {
-    font-size: 18px;
-    line-height: 1.2;
-    margin: 10px 0;
-    @include get-color(color, textcolor);
-}
-
-%html-ul {
-    margin: 10px 0;
-    list-style:decimal;
-    list-style-position: inside;
-    @include get-color(color, textcolor);
-}
-
-%html-h1 {
-    // &:not(:first-child) {
-    //     margin-top: 50px;
-    //     @include get-color(color, textcolor);
-    // }
-    font-size: 36px;
-    @include get-color(color, textcolor);
-    margin: 15px 0;
-    font-weight: bold;
-}
-
-%html-h2 {
-    font-size: 33px;
-    @include get-color(color, textcolor);
-    margin: 15px 0;
-    font-weight: bold;
-}
-
-%html-h3 {
-    font-size: 30px;
-    @include get-color(color, textcolor);
-    margin: 15px 0;
-    font-weight: bold;
-}
-
-%html-h4 {
-    font-size: 27px;
-    @include get-color(color, textcolor);
-    margin: 15px 0;
-    font-weight: bold;
-}
-
-%html-h5 {
-    font-size: 24px;
-    @include get-color(color, textcolor);
-    margin: 15px 0;
-    font-weight: bold;
-}
-
-%html-p {
-    line-height: 1.2;
-    font-size: 20px;
-    @include get-color(color, textcolor);
-}

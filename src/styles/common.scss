@@ -1,6 +1,15 @@
 @import "./darkmode";
 @import "./extends.scss";
 
+.Wrapper {
+    @include get-color(background-color, maincolor);
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .BlogItem-title {
     padding: 20px 10px;
     text-align: start;
@@ -17,23 +26,62 @@
     font-size: 14px; 
 }
 
-.html-style {
-    h1 {
-        @extend %html-h1;
-    }
-    
-    h2 {
-        @extend %html-h2;
-    }
+.language-button {
+    @include get-color(background-color, buttoncolor);
+    text-decoration: none;
+    width: 50px;
+    height: 33px;
+    @include get-color(color, buttontextcolor);
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 0;
+    cursor: pointer;
+}
 
-    p {
-        @extend %html-p;
+.ViewMore_Link {
+    margin-top: 30px;
+    background-color: transparent;
+    border: 0;
+    padding: 0 10px 10px 0;
+    text-decoration: none;
+    cursor: pointer;
+    span {
+        font-size: 15px;
+        &:hover {
+            opacity: 0.7;
+        }
+        letter-spacing: -0.2px;
+        @include get-color(color, textcolor);
     }
-
-    ul {
-        @extend %html-ul;
-    }
-    li {
-        @extend %html-li;
+    svg {
+        background-color: #ef5777;
+        border-radius: 50px;
+        font-size: 15px;
+        margin-right: 5px;
+        color: #23272B;
     }
 }
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+.gatsby-resp-image-wrapper {
+    margin: 50px 0;
+}
+
+.gatsby-resp-image-image {
+    @include get-color(background-color, image-padding);
+    padding: 10px;
+    border-radius: 5px;
+    object-fit: scale-down;
+    height: auto !important;
+    position: static !important;
+}
+
+.gatsby-resp-image-background-image {
+    height: auto ;
+    padding: 0px !important;
+}
+
+//━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

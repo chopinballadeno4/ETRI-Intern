@@ -54,22 +54,4 @@
     flex-direction: column;
     margin-top: 70px;
 
-    h1 {
-        @extend %html-h1;
-    }
-    
-    h2 {
-        @extend %html-h2;
-    }
-
-    p {
-        @extend %html-p;
-    }
-
-    ul {
-        @extend %html-ul;
-    }
-    li {
-        @extend %html-li;
-    }
 }

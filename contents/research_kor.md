@@ -1,7 +1,6 @@
 ---
 page: "research"
 language: "kor"
-title: "introduce content"
 ---
 
 # 최종 목표
@@ -37,9 +36,9 @@ title: "introduce content"
   도메인을 대상으로 테스트베드와 실환경에서 기술의 적용성을
   검증함
 
-![img](../static/research2.png)
+![img](../static/research4.png)
 
-![img](../static/research3.png)
+![img](../static/research5.png)
 
 # 1단계
 

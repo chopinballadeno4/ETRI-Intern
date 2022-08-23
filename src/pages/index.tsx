@@ -41,29 +41,12 @@ function IndexPage({
 		allMarkdownRemark: { edges },
 	},
 }: IHome) {
-	const [bloglist, setBlogList] = useState<IHomeNode[]>([]);
-
-	useEffect(() => {
-		let tempArr: IHomeNode[] = [];
-		edges.forEach(item => {
-			if (item.node.frontmatter.page === "blog") {
-				const tempObj = { ...item };
-				tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
-				//setBlogList([...bloglist, tempObj]);
-				tempArr = [...tempArr, tempObj];
-				console.log(tempObj);
-			}
-		});
-		console.log(tempArr);
-		setBlogList([...tempArr]);
-	}, []);
-
 	return (
 		<Layout>
-			<div className="home-wrapper">
-				<section className="home-research">
+			<div className="Wrapper">
+				<section id="home-research">
 					<StaticImage src="../../static/home.jpg" alt="img" />
-					<div className="home-image-text">
+					<div id="home-research-text">
 						<span>
 							Continuous local adaptation to user response in real environment
 							service situations (Local) Robot intelligence technology
@@ -75,35 +58,33 @@ function IndexPage({
 						</Link>
 					</div>
 				</section>
-				<section className="home-blog">
-					<div className="home-blog1">
+				<section id="home-blog">
+					<div id="home-blog1">
 						<div>
 							<GatsbyImage
 								image={
-									bloglist[0]?.node.frontmatter.thumbnail.childImageSharp
+									edges[0]?.node.frontmatter.thumbnail.childImageSharp
 										.gatsbyImageData
 								}
-								className="home-image"
 								alt="img"
 							/>
 							<div>
-								<span>{bloglist[0]?.node.frontmatter.title}</span>
-								<ViewMore node={bloglist[0]?.node} />
+								<span>{edges[0]?.node.frontmatter.title}</span>
+								<ViewMore slug={edges[0]?.node.fields.slug} />
 							</div>
 						</div>
 					</div>
-					<div className="home-blog2">
+					<div id="home-blog2">
 						<div>
 							<div>
-								<span>{bloglist[1]?.node.frontmatter.title}</span>
-								<ViewMore node={bloglist[1]?.node} />
+								<span>{edges[1]?.node.frontmatter.title}</span>
+								<ViewMore slug={edges[1]?.node.fields.slug} />
 							</div>
 							<GatsbyImage
 								image={
-									bloglist[1]?.node.frontmatter.thumbnail.childImageSharp
+									edges[1]?.node.frontmatter.thumbnail.childImageSharp
 										.gatsbyImageData
 								}
-								className="home-image"
 								alt="img"
 							/>
 						</div>
@@ -119,6 +100,7 @@ export default IndexPage;
 export const HomeQuery = graphql`
 	query homeQuery {
 		allMarkdownRemark(
+			filter: { frontmatter: { page: { eq: "blog" } } }
 			sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
 		) {
 			edges {
