@@ -8,7 +8,15 @@ import {
 import { graphql } from "gatsby";
 import { IPersonListType, IPersonInfo } from "./types/PersonInfo.types";
 
-function PersonInfo({ page, order, name, contact, work, image }: IPersonInfo) {
+function PersonInfo({
+	page,
+	order,
+	name,
+	contact,
+	work,
+	department,
+	image,
+}: IPersonInfo) {
 	return (
 		<div className="PersonInfo-wrapper">
 			<GatsbyImage

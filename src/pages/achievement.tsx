@@ -1,4 +1,5 @@
 import "./styles/achievement.scss";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import Layout from "components/Layout";
 import ItemList from "components/ItemList";
@@ -18,6 +19,12 @@ interface IAchievementNode {
 		frontmatter: {
 			page: string;
 			category: string;
+			no: number;
+			thumbnail: {
+				childImageSharp: {
+					gatsbyImageData: IGatsbyImageData;
+				};
+			};
 		};
 	};
 }
@@ -33,7 +40,7 @@ function achievement({
 	const [program, setProgram] = useState(false);
 	const [opensw, setOpenSW] = useState(false);
 	const [dataset, setDataSet] = useState(false);
-	const [achievement, setAchievement] = useState<IAchievementNode>();
+	const [achievement, setAchievement] = useState<IAchievementNode[]>();
 
 	useEffect(() => {
 		if (dissertation) setCategory("dissertation");
@@ -45,11 +52,8 @@ function achievement({
 
 	useEffect(() => {
 		edges.forEach(item => {
-			if (
-				item.node.frontmatter.page === "achievement" &&
-				item.node.frontmatter.category === category
-			) {
-				setAchievement(item);
+			if (item.node.frontmatter.category === category) {
+				setAchievement([...(achievement || []), item]);
 			}
 		});
 	}, [category]);
@@ -78,9 +82,9 @@ function achievement({
 
 	return (
 		<Layout>
-			<div className="achievement-wrapper">
-				<div className="achievement-main">
-					<ul className="achievement-side-list">
+			<div className="Wrapper">
+				<div id="achievement-main">
+					<ul id="achievement-side-list">
 						<li>
 							{dissertation ? (
 								<button
@@ -206,13 +210,22 @@ function achievement({
 
 export const achievementQuery = graphql`
 	query achievementQuery {
-		allMarkdownRemark {
+		allMarkdownRemark(
+			filter: { frontmatter: { page: { eq: "achievement" } } }
+			sort: { order: ASC, fields: [frontmatter___no] }
+		) {
 			edges {
 				node {
 					html
 					frontmatter {
 						page
 						category
+						no
+						thumbnail {
+							childImageSharp {
+								gatsbyImageData
+							}
+						}
 					}
 				}
 			}

@@ -6,6 +6,7 @@ export interface IPersonInfo {
 	name: string;
 	contact: string;
 	work: string;
+	department: string;
 	image: {
 		childImageSharp: {
 			gatsbyImageData: IGatsbyImageData;

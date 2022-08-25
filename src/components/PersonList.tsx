@@ -11,20 +11,17 @@ interface IPersonList {
 }
 
 function PersonList({ type, posts }: IPersonList) {
-	return (
-		<div className="PersonList-wrapper">
-			{/* {type === "ETRI"
-				? posts.map(({ node: { id, frontmatter } }: IPersonListType) => {
-						<PersonInfo {...frontmatter} key={id} />;
-				  })
-				: null}
-			{type === "KAIST"
-				? posts.map(({ node: { id, frontmatter } }: IPersonListType) => (
-						<PersonInfo {...frontmatter} key={id} />
-				  ))
-				: null} */}
-		</div>
-	);
+	const RenderList = (type: string) => {
+		const result: JSX.Element[] = [];
+		posts.forEach(item => {
+			if (item.node.frontmatter.department == type) {
+				result.push(<PersonInfo {...item.node.frontmatter} />);
+			}
+		});
+		return result;
+	};
+
+	return <div className="PersonList-wrapper">{RenderList(type)}</div>;
 }
 
 export default PersonList;
