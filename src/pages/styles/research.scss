@@ -1,17 +1,13 @@
 @import "../../styles/darkmode";
 @import "../../styles/extends.scss";
 
-#research-language {
-    display: flex;
-    justify-content: flex-end;
+#research-main {
     width: 40%;
-    margin: 30px 0;
 }
 
-
 #research-html {
-    width: 40%;
-    margin: 30px 0 100px 0;
+    width: 100%;
+    margin: 0 0 100px 0;
     display: flex;
     flex-direction: column;
     @extend %html-style;

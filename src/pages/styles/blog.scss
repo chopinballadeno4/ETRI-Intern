@@ -1,14 +1,6 @@
 @import "../../styles/darkmode";
 
-.blog-wrapper {
-    flex: 1;
-    @include get-color(background-color, maincolor);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.blog-header {
+#blog-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,9 +8,10 @@
     //@include get-color(background-image, blog-header);
     @include get-color(background-color, blog-header);
     padding: 65px 0;
+
 }
 
-.blog-header-span {
+#blog-header-span {
     padding: 15px 0 25px 0;
     width: 50%;
     display: flex;
@@ -33,14 +26,13 @@
     }
 }
 
-.blog-icon {
+#blog-icon {
     @include get-color(color, content-h1color);
     text-align: center;
     font-size: 20px;
-
 }
 
-.blog-topic {
+#blog-topic {
     display: flex;
     width: 50%;
 
@@ -62,9 +54,7 @@
     }
 }
 
-
-
-.blog-list {
+#blog-list {
     width: 50%;
     margin: 50px 0;
     display: grid;

@@ -54,9 +54,9 @@ function about({
 
 	return (
 		<Layout>
-			<div className="about-wrapper">
-				<div className="about-main">
-					<div id="blogtemplate-date">
+			<div className="Wrapper">
+				<div id="about-main">
+					<div className="language-select">
 						<button className="language-button" onClick={korClick}>
 							Kor
 						</button>

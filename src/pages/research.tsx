@@ -56,22 +56,20 @@ function research({
 	return (
 		<Layout>
 			<div className="Wrapper">
-				<div id="research-language">
-					<button
-						className="language-button"
-						onClick={korClick}
-						style={{ marginRight: "10px" }}
-					>
-						Kor
-					</button>
-					<button className="language-button" onClick={engClick}>
-						Eng
-					</button>
+				<div id="research-main">
+					<div className="language-select">
+						<button className="language-button" onClick={korClick}>
+							Kor
+						</button>
+						<button className="language-button" onClick={engClick}>
+							Eng
+						</button>
+					</div>
+					<main
+						id="research-html"
+						dangerouslySetInnerHTML={{ __html: html }}
+					></main>
 				</div>
-				<main
-					id="research-html"
-					dangerouslySetInnerHTML={{ __html: html }}
-				></main>
 			</div>
 		</Layout>
 	);

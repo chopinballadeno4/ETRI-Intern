@@ -47,12 +47,10 @@ function blog({
 	useEffect(() => {
 		let tempArr: IBlogNode[] = [];
 		edges.forEach(item => {
-			if (item.node.frontmatter.page === "blog") {
-				const tempObj = { ...item };
-				tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
-				//setBlogList([...bloglist, tempObj]);
-				tempArr = [...tempArr, tempObj];
-			}
+			const tempObj = { ...item };
+			tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
+			// 이 부분 필요한가요 ? !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			tempArr = [...tempArr, tempObj];
 		});
 		setBlogList([...tempArr]);
 	}, []);
@@ -75,7 +73,7 @@ function blog({
 						{bloglist[0].node.frontmatter.title}
 					</span>
 					<div>
-						<ViewMore node={bloglist[0]?.node} />
+						<ViewMore slug={bloglist[0]?.node.fields.slug} />
 						<span className="BlogItem-date">
 							{typeof bloglist[0].node.frontmatter.date !== "string"
 								? bloglist[0].node.frontmatter.date.toDateString()
@@ -99,15 +97,15 @@ function blog({
 
 	return (
 		<Layout>
-			<div className="blog-wrapper">
-				<section className="blog-header">
-					<div className="blog-header-span">
-						<FontAwesomeIcon icon={faBookBookmark} className="blog-icon" />
+			<div className="Wrapper">
+				<section id="blog-header">
+					<div id="blog-header-span">
+						<FontAwesomeIcon icon={faBookBookmark} id="blog-icon" />
 						<span>New</span>
 					</div>
-					<div className="blog-topic">{RenderBlogHeader()}</div>
+					<div id="blog-topic">{RenderBlogHeader()}</div>
 				</section>
-				<div className="blog-list">{RenderBlogList()}</div>
+				<div id="blog-list">{RenderBlogList()}</div>
 			</div>
 		</Layout>
 	);
@@ -119,6 +117,7 @@ export const BlogQuery = graphql`
 	query blogQuery {
 		allMarkdownRemark(
 			sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+			filter: { frontmatter: { page: { eq: "blog" } } }
 		) {
 			edges {
 				node {

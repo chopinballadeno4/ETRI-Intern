@@ -46,13 +46,11 @@ function BlogTemplate({
 	useEffect(() => {
 		setBlogItem(edges[0]);
 		edges.map(item => {
-			if (item.node.frontmatter.page === "blog") {
-				if (item.node.frontmatter.language === "kor" && isKor) {
-					setHtml(item.node.html);
-				}
-				if (item.node.frontmatter.language === "eng" && !isKor) {
-					setHtml(item.node.html);
-				}
+			if (item.node.frontmatter.language === "kor" && isKor) {
+				setHtml(item.node.html);
+			}
+			if (item.node.frontmatter.language === "eng" && !isKor) {
+				setHtml(item.node.html);
 			}
 		});
 		console.log(html);
@@ -90,25 +88,29 @@ function BlogTemplate({
 
 	return (
 		<Layout>
-			<div id="blogtemplate-wrapper">
+			<div className="Wrapper">
 				<main id="blogtemplate-main">
-					<div id="blogtemplate-title">
+					<div className="BlogItem-title" style={{ fontSize: "30px" }}>
 						<span>{blogitem?.node.frontmatter.title}</span>
 					</div>
 					<div id="blogtemplate-date">
-						<div>
+						<div className="BlogItem-date">
 							<span>{blogitem?.node.frontmatter.date}</span>
 						</div>
 						<button className="language-button" onClick={korClick}>
 							Kor
 						</button>
-						<button className="language-button" onClick={engClick}>
+						<button
+							className="language-button"
+							onClick={engClick}
+							style={{ marginLeft: "10px" }}
+						>
 							Eng
 						</button>
 					</div>
 					{RenderThumbnail()}
 					<main
-						className="blogtemplate-html"
+						id="blogtemplate-html"
 						dangerouslySetInnerHTML={{ __html: html }}
 					></main>
 				</main>

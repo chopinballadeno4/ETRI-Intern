@@ -10,21 +10,6 @@
     align-items: center;
 }
 
-.BlogItem-title {
-    padding: 20px 10px;
-    text-align: start;
-    font-size: 20px;
-    @include get-color(color, headercolor);
-    font-weight: 500;
-}
-
-.BlogItem-date {
-    justify-self: flex-end;
-    text-align: end;
-    opacity: 0.5;
-    padding: 0 10px 10px 0;
-    font-size: 14px; 
-}
 
 .language-button {
     @include get-color(background-color, buttoncolor);
@@ -62,6 +47,20 @@
         margin-right: 5px;
         color: #23272B;
     }
+}
+
+.language-select {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;   
+    :last-of-type {
+        margin-left: 10px;
+    }
+    margin: 40px 0 60px 0;
+}
+
+.html-style {
+    @extend %html-style;
 }
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

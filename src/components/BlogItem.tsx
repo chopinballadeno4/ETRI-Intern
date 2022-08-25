@@ -33,7 +33,7 @@ function BlogItem({ node }: IBlogItemNode) {
 				alt="img"
 			/>
 			<span className="BlogItem-title">{node.frontmatter.title}</span>
-			<ViewMore node={node} />
+			<ViewMore slug={node?.fields.slug} />
 			<span className="BlogItem-date">
 				{typeof node.frontmatter.date !== "string"
 					? node.frontmatter.date.toDateString()
