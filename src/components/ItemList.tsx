@@ -28,28 +28,28 @@ interface IItemList {
 function ItemList({ headertype, category, content }: IItemList) {
 	const RenderItem = () => {
 		const result = [];
+		console.log(category);
 		console.log(content);
 		for (let i = 0; i < content.length; i++) {
 			result.push(
-				<div className="ItemList-html">
-					{/* <GatsbyImage
+				/* <GatsbyImage
 						image={
 							content[i].node.frontmatter.thumbnail.childImageSharp
 								.gatsbyImageData
 						}
 						alt="image"
 						className="PersonInfo-image"
-					/> */}
-					<main
-						dangerouslySetInnerHTML={{ __html: content[i].node.html }}
-					></main>
-				</div>,
+					/> */
+				<main
+					dangerouslySetInnerHTML={{ __html: content[i].node.html }}
+					id="ItemList-wrapper"
+				></main>,
 			);
 		}
 		return result;
 	};
 
-	return <main className="ItemList-wrapper">{RenderItem()}</main>;
+	return <>{RenderItem()}</>;
 }
 
 export default ItemList;

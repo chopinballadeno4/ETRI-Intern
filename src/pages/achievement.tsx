@@ -35,12 +35,13 @@ function achievement({
 	},
 }: IAchievement) {
 	const [category, setCategory] = useState("");
+	const [achievement, setAchievement] = useState<IAchievementNode[]>();
+	//━━━━━
 	const [dissertation, setDissertation] = useState(true);
 	const [patent, setPatent] = useState(false);
 	const [program, setProgram] = useState(false);
 	const [opensw, setOpenSW] = useState(false);
 	const [dataset, setDataSet] = useState(false);
-	const [achievement, setAchievement] = useState<IAchievementNode[]>();
 
 	useEffect(() => {
 		if (dissertation) setCategory("dissertation");
@@ -51,11 +52,14 @@ function achievement({
 	}, [dissertation, patent, program, opensw, dataset]);
 
 	useEffect(() => {
+		const tempArr: IAchievementNode[] = [];
+		setAchievement([]);
 		edges.forEach(item => {
 			if (item.node.frontmatter.category === category) {
-				setAchievement([...(achievement || []), item]);
+				tempArr.push(item);
 			}
 		});
+		setAchievement([...tempArr]);
 	}, [category]);
 
 	const resetButton = () => {

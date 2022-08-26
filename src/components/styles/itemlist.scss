@@ -3,52 +3,18 @@
 //box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
 //transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 
-.ItemList-wrapper {
+#ItemList-wrapper {
     width: 100%;
-    @include get-color(background-color, content);
     height: 100%;
-    padding: 40px 20px;
+    @include get-color(background-color, content);
+    padding: 20px ;
     border-radius: 8px;
     @include get-color(border, bordercolor);
     box-sizing: border-box;
-}
+    margin-bottom: 20px;
 
-.ItemList-html {
-    width: 100%;
-    table {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        thead {
-            width: 100%;
-            margin-bottom: 20px;
-            tr {
-                width: 100%;
-                display: grid;
-                grid-template-columns: repeat(11, 1fr);
-                th {
-                    font-size: 20px;
-                }
-            }
-        }
-        tbody {
-            width: 100%;
-            tr {
-                display: grid;
-                grid-template-columns: repeat(11, 1fr);
-                @include get-color(border-bottom, bordercolor);
-                padding: 20px 0;
-
-                td {
-                    overflow: auto;
-                    text-align: center;
-                    padding: 0 7px;
-
-                }
-                td::-webkit-scrollbar {
-                    display: none;
-                }
-            }
-        }
+    p {
+        @include get-color(color, textcolor);
+        margin: 10px 0;
     }
 }
