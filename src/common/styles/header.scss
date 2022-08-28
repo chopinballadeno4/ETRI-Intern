@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 @import "../../styles/darkmode";
+@import "../../styles/mixins";
 
 #header-wrapper {
     display: flex;
@@ -9,60 +10,96 @@
     @include get-color(background-color, headercolor);
     position: relative;
 
-}
+    #header-main {
+        @include desktop {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-width: 1024px;
+            max-width: 1500px;
+            width: 50%;
 
-#header-main {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    min-width: 1024px;
-    max-width: 1500px;
-    width: 50%;
-}
+            #header-link {
+                display: flex;
+                align-items: center;
+                span {
+                    color: #fff;
+                    font-size: 16px;
+                    outline: none;
+                }  
+            }
 
-#header-logo {
-    height: 100%;
-    position: absolute;
-    top: 8px;
+            #header-darkmode-button {
+                background-color: transparent;
+                border: 0;
+                margin-left: 50px;
+            
+                &:hover {
+                    cursor: pointer;
+                }
+
+                #darkmode-icon {
+                    font-size: 30px;
+                    @include get-color(color, togglecolor);
+                }
+            }
     
-    img {
-        height: 62px !important;
-        object-fit: scale-down;
+            #header-sidebar-button {
+                display: none;
+            }
+
+            #header-link :link {
+                margin-left: 50px;
+                text-decoration: none;
+            
+                &:hover {
+                 cursor: pointer;
+                 opacity: 0.6;   
+                }
+            }
+        }
+    
+        @include nondesktop {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+    
+            #header-link {
+                display: none;
+            }
+    
+            #header-sidebar-button {
+                border: 0;
+                background-color: transparent;
+                #sidebar-icon {
+                    font-size: 30px;
+                    @include get-color(color, togglecolor);                    
+                }
+            }
+        }
+        //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        #header-logo {
+            height: 100%;
+            position: absolute;
+            top: 8px;
+            
+            img {
+                height: 62px !important;
+                object-fit: scale-down;
+            }
+        }
     }
 }
 
-#header-link {
-    display: flex;
-    align-items: center;
-    span {
-        color: #fff;
-        font-size: 16px;
-        outline: none;
-    }  
-}
 
-#header-link :link {
-    margin-left: 50px;
-    text-decoration: none;
 
-    &:hover {
-     cursor: pointer;
-     opacity: 0.6;   
-    }
-}
 
-#darkmode-icon {
-    font-size: 30px;
-    @include get-color(color, togglecolor);
-}
 
-#header-button {
-    background-color: transparent;
-    border: 0;
-    margin-left: 50px;
 
-    &:hover {
-        cursor: pointer;
-    }
-}
+
+
+
+
+
+
 

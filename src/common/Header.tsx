@@ -1,13 +1,9 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import { Link } from "gatsby";
 import "./styles/header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import {
-	GatsbyImage,
-	IGatsbyImageData,
-	StaticImage,
-} from "gatsby-plugin-image";
+import { faMoon, faBars } from "@fortawesome/free-solid-svg-icons";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Header: FunctionComponent = function () {
 	useEffect(() => {
@@ -59,10 +55,13 @@ const Header: FunctionComponent = function () {
 					<Link to={"/about"}>
 						<span>About</span>
 					</Link>
-					<button onClick={darkmodeClick} id="header-button">
+					<button onClick={darkmodeClick} id="header-darkmode-button">
 						<FontAwesomeIcon icon={faMoon} id="darkmode-icon" />
 					</button>
 				</nav>
+				<button id="header-sidebar-button">
+					<FontAwesomeIcon icon={faBars} id="sidebar-icon" />
+				</button>
 			</header>
 		</div>
 	);

@@ -34,6 +34,12 @@ function people({
 						</span>
 						<PersonList type="KAIST" posts={edges} />
 					</section>
+					<section className="people-group3">
+						<span>
+							Korea Advanced Institute of Science and Technology, South Korea
+						</span>
+						<PersonList type="KAIST" posts={edges} />
+					</section>
 				</main>
 			</div>
 		</Layout>

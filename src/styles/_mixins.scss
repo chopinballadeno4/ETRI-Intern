@@ -1,0 +1,16 @@
+$nondesktop: 1023px;
+$desktop: 1024px;
+
+/*반응형, 브라우저 크기가 767px 이하일때*/
+@mixin nondesktop{
+  @media (max-width: $nondesktop){
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+@mixin desktop{
+  @media (min-width: $desktop){
+    @content;
+  }
+}
