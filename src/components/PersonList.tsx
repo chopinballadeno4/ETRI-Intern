@@ -1,9 +1,7 @@
 import "./styles/personlist.scss";
 import React from "react";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
-import { IPersonListType, IPersonInfo } from "./types/PersonInfo.types";
-import PersonInfo from "components/PersonInfo";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { IPersonListType } from "../pages/people";
 
 interface IPersonList {
 	type: string;
@@ -15,13 +13,26 @@ function PersonList({ type, posts }: IPersonList) {
 		const result: JSX.Element[] = [];
 		posts.forEach(item => {
 			if (item.node.frontmatter.department == type) {
-				result.push(<PersonInfo {...item.node.frontmatter} />);
+				result.push(
+					<div id="PersonInfo-wrapper">
+						<GatsbyImage
+							image={
+								item.node.frontmatter.image.childImageSharp.gatsbyImageData
+							}
+							alt="image"
+							className="PersonInfo-image"
+						/>
+						<span>{item.node.frontmatter.name}</span>
+						<span>{item.node.frontmatter.contact}</span>
+						<span>{item.node.frontmatter.work}</span>
+					</div>,
+				);
 			}
 		});
 		return result;
 	};
 
-	return <div className="PersonList-wrapper">{RenderList(type)}</div>;
+	return <div id="PersonList-wrapper">{RenderList(type)}</div>;
 }
 
 export default PersonList;

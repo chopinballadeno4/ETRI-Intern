@@ -1,41 +1,39 @@
 @import "../../styles/darkmode";
+@import "../../styles/_mixins.scss";
 
-.people-wrapper {
-    @include get-color(background-color, maincolor);
-    width: 100%;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.people-main {
-    width: 50%;
+#people-main {
+    @include mobile {
+        width: 80%;
+    }
+    @include tablet {
+        width: 65%;
+    }
+    @include desktop {
+        width: 50%;
+    }
     margin: 50px 0;
     height: 100%;
-}
 
-.people-group1 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-    span {
-        &:first-child {
-            @include get-color(color, textcolor);
-            font-size: 22px;
+    #people-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    
+        span {
+            &:first-child {
+                @include get-color(color, textcolor);
+                @include mobile {
+                    font-size: 1.8rem;
+                }
+                @include tablet {
+                    font-size: 2.2rem;
+                }
+                @include desktop {
+                    font-size: 2.6rem;
+                }
+            }
         }
     }
 }
 
-.people-group2 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 
-    span {
-        &:first-child {
-            @include get-color(color, textcolor);
-           font-size: 22px;
-        }
-    }
-}

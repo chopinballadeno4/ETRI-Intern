@@ -1,9 +1,30 @@
 import "./styles/people.scss";
 import Layout from "components/Layout";
-import React, { FunctionComponent, useEffect } from "react";
+import React from "react";
 import { graphql } from "gatsby";
-import { IPersonListType } from "components/types/PersonInfo.types";
 import PersonList from "../components/PersonList";
+import { IGatsbyImageData } from "gatsby-plugin-image";
+
+export interface IPersonInfo {
+	page: string;
+	order: number;
+	name: string;
+	contact: string;
+	work: string;
+	department: string;
+	image: {
+		childImageSharp: {
+			gatsbyImageData: IGatsbyImageData;
+		};
+	};
+}
+
+export interface IPersonListType {
+	node: {
+		id: string;
+		frontmatter: IPersonInfo;
+	};
+}
 
 interface Ipeople {
 	data: {
@@ -20,21 +41,21 @@ function people({
 }: Ipeople) {
 	return (
 		<Layout>
-			<div className="people-wrapper">
-				<main className="people-main">
-					<section className="people-group1">
+			<div className="Wrapper">
+				<main id="people-main">
+					<section id="people-group">
 						<span>
 							Electronics and Telecommunications Research Institute, South Korea
 						</span>
 						<PersonList type="ETRI" posts={edges} />
 					</section>
-					<section className="people-group2">
+					<section id="people-group">
 						<span>
 							Korea Advanced Institute of Science and Technology, South Korea
 						</span>
 						<PersonList type="KAIST" posts={edges} />
 					</section>
-					<section className="people-group3">
+					<section id="people-group">
 						<span>
 							Korea Advanced Institute of Science and Technology, South Korea
 						</span>
