@@ -2,7 +2,7 @@ import "./styles/achievement.scss";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import Layout from "components/Layout";
-import ItemList from "components/ItemList";
+import AchievementList from "components/AchievementList";
 import { graphql } from "gatsby";
 
 interface IAchievement {
@@ -72,13 +72,7 @@ function achievement({
 
 	const RenderItemList = () => {
 		if (achievement !== undefined) {
-			return (
-				<ItemList
-					headertype={"achievement"}
-					category={category}
-					content={achievement}
-				/>
-			);
+			return <AchievementList content={achievement} />;
 		} else {
 			return null;
 		}

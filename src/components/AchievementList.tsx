@@ -1,5 +1,4 @@
-import "./styles/itemlist.scss";
-import { boardcontent } from "./types/ItemList.types";
+import "./styles/achievementlist.scss";
 import React from "react";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
@@ -19,31 +18,30 @@ interface IAchievementNode {
 	};
 }
 
-interface IItemList {
-	headertype: string;
-	category: string;
+interface IAchievementList {
 	content: IAchievementNode[];
 }
 
-function ItemList({ headertype, category, content }: IItemList) {
+function AchievementList({ content }: IAchievementList) {
 	const RenderItem = () => {
 		const result = [];
-		console.log(category);
 		console.log(content);
 		for (let i = 0; i < content.length; i++) {
 			result.push(
-				/* <GatsbyImage
+				<>
+					{/* <GatsbyImage
 						image={
 							content[i].node.frontmatter.thumbnail.childImageSharp
 								.gatsbyImageData
 						}
 						alt="image"
 						className="PersonInfo-image"
-					/> */
-				<main
-					dangerouslySetInnerHTML={{ __html: content[i].node.html }}
-					id="ItemList-wrapper"
-				></main>,
+					/> */}
+					<main
+						dangerouslySetInnerHTML={{ __html: content[i].node.html }}
+						id="ItemList-wrapper"
+					></main>
+				</>,
 			);
 		}
 		return result;
@@ -52,4 +50,4 @@ function ItemList({ headertype, category, content }: IItemList) {
 	return <>{RenderItem()}</>;
 }
 
-export default ItemList;
+export default AchievementList;

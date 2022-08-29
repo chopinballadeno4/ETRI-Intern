@@ -1,53 +1,68 @@
 @import "../../styles/darkmode";
+@import "../../styles/extends.scss";
 
 #achievement-main {
     margin: 20px 0;
     width: 80%;
     display: flex;
     flex-direction: column;
-}
 
-#achievement-side-list {
-    margin-top: 30px;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-
-    & .noneclicked-button {
-        background-color: transparent;
-        border: 0;
-        padding: 0;
-        margin-right: 15px;
-
-        &:hover {
-            cursor: pointer;
+    #achievement-side-list {
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    
+        & .noneclicked-button {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            margin-right: 15px;
+    
+            &:hover {
+                cursor: pointer;
+            }
+    
+            span {
+                @include mobile {
+                    font-size: 15px;
+                }
+                @include tablet {
+                    font-size: 17px;
+                }
+                @include desktop {
+                    font-size: 19px;
+                }
+                opacity: 0.5;
+                @include get-color(color, textcolor);
+                letter-spacing: -1px;
+            }
         }
+        
+        & .clicked-button {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            margin-right: 15px;
 
-        span {
-            font-size: 19px;
-            opacity: 0.5;
-            @include get-color(color, textcolor);
-            letter-spacing: -1px;
+            &:hover {
+                cursor: pointer;
+            }
+    
+            span {
+                @include mobile {
+                    font-size: 15px;
+                }
+                @include tablet {
+                    font-size: 17px;
+                }
+                @include desktop {
+                    font-size: 19px;
+                }                
+                font-weight: bold;
+                @include get-color(color, textcolor);
+                letter-spacing: -1px;
+            }
         }
     }
-    
-    & .clicked-button {
-        background-color: transparent;
-        border: 0;
-        padding: 0;
-        margin-right: 15px;
-
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        span {
-            font-size: 19px;
-            font-weight: bold;
-            @include get-color(color, textcolor);
-            letter-spacing: -1px;
-        }
-    }
-    
 }

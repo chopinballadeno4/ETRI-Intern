@@ -1,4 +1,5 @@
 @import "../../styles/darkmode";
+@import "../../styles/extends.scss";
 
 //box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
 //transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
@@ -16,5 +17,14 @@
     p {
         @include get-color(color, textcolor);
         margin: 10px 0;
+        @include mobile {
+            font-size: 13px;
+        }
+        @include tablet {
+            font-size: 15px;
+        }
+        @include desktop {
+            font-size: 17px;
+        }
     }
 }
