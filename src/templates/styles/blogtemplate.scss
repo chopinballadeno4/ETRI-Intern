@@ -1,32 +1,53 @@
-@import "../../styles/darkmode";
+@import "../../styles/_darkmode.scss";
 @import "../../styles/extends.scss";
 @import "../../styles/_mixins.scss";
 
 #blogtemplate-main {
-    width: 40%;
-    margin: 50px 0 100px 0;
-}
-
-#blogtemplate-thumbnail {
-    display: grid;
-    place-items: center;
-    width: 80%;
-}
-
-#blogtemplate-date {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px 0 50px 0;
-    span {
-        text-align: center;
-        margin-right: 20px;
+    @include mobile {
+        width: 80%
     }
+    @include tablet {
+        width: 60%;
+    }
+    @include desktop {
+        width: 40%;
+    }
+    margin: 50px 0 100px 0;
 
-    div {
-        display: flex;
-        align-items: center;
+    #blogtemplate-thumbnail {
+        display: grid;
+        place-items: center;
+        width: 80%;
     }
     
+    #blogtemplate-date {
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px 0 50px 0;
+        span {
+            text-align: center;
+            margin-right: 20px;
+        }
+    
+        div {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    #blogtemplate-title {
+        @include mobile {
+            font-size: 22px;
+        }
+        @include tablet {
+            font-size: 26px;
+        }
+        @include desktop {
+            font-size: 30px;
+        }
+        @include get-color(color, content-h1color);
+        font-weight: 500;
+    }
 }
 
 #blogtemplate-html {

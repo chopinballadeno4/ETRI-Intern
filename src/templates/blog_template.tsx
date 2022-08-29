@@ -90,7 +90,7 @@ function BlogTemplate({
 		<Layout>
 			<div className="Wrapper">
 				<main id="blogtemplate-main">
-					<div className="BlogItem-title" style={{ fontSize: "30px" }}>
+					<div id="blogtemplate-title">
 						<span>{blogitem?.node.frontmatter.title}</span>
 					</div>
 					<div id="blogtemplate-date">
