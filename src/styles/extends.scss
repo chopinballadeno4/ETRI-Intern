@@ -1,4 +1,5 @@
 @import "./darkmode";
+@import "./mixins";
 
 %button {
     @include get-color(background-color, buttoncolor);
@@ -28,75 +29,223 @@
     display: flex;
     flex-direction: column;
 
-    h1 {
-        font-size: 36px;
-        @include get-color(color, textcolor);
-        margin: 15px 0;
-        font-weight: bold;
-        word-spacing: 5px;
-        letter-spacing: -1px;
+    @include mobile {
+        h1 {
+            font-size: 3.0rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h2 {
+            font-size: 2.7rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h3 {
+            font-size: 2.4rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h4 {
+            font-size: 2.1rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h5 {
+            font-size: 1.8rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        ul {
+            margin: 1rem 0;
+            list-style:decimal;
+            list-style-position: inside;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        p {
+            font-size: 1.4rem;
+            line-height: 1.2;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        li {
+            font-size: 1.2rem;
+            line-height: 1.2;
+            margin: 1rem 0;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }    
     }
-
-    h2 {
-        font-size: 33px;
-        @include get-color(color, textcolor);
-        margin: 15px 0;
-        font-weight: bold;
-        word-spacing: 5px;
-        letter-spacing: -1px;
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    @include tablet {
+        h1 {
+            font-size: 3.3rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h2 {
+            font-size: 3.0rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h3 {
+            font-size: 2.7rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h4 {
+            font-size: 2.4rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h5 {
+            font-size: 2.1rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        ul {
+            margin: 1rem 0;
+            list-style:decimal;
+            list-style-position: inside;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        p {
+            font-size: 1.7rem;
+            line-height: 1.2;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        li {
+            font-size: 1.5rem;
+            line-height: 1.2;
+            margin: 1rem 0;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }    
     }
-
-    h3 {
-        font-size: 30px;
-        @include get-color(color, textcolor);
-        margin: 15px 0;
-        font-weight: bold;
-        word-spacing: 5px;
-        letter-spacing: -1px;
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    @include desktop {
+        h1 {
+            font-size: 3.6rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h2 {
+            font-size: 3.3rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h3 {
+            font-size: 3rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h4 {
+            font-size: 2.7rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        h5 {
+            font-size: 2.4rem;
+            @include get-color(color, textcolor);
+            margin: 1.5rem 0;
+            font-weight: bold;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        ul {
+            margin: 1rem 0;
+            list-style:decimal;
+            list-style-position: inside;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        p {
+            font-size: 2rem;
+            line-height: 1.2;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }
+    
+        li {
+            font-size: 1.8rem;
+            line-height: 1.2;
+            margin: 1rem 0;
+            @include get-color(color, textcolor);
+            word-spacing: 5px;
+            letter-spacing: -1px;
+        }    
     }
-
-    h4 {
-        font-size: 27px;
-        @include get-color(color, textcolor);
-        margin: 15px 0;
-        font-weight: bold;
-        word-spacing: 5px;
-        letter-spacing: -1px;
-    }
-
-    h5 {
-        font-size: 24px;
-        @include get-color(color, textcolor);
-        margin: 15px 0;
-        font-weight: bold;
-        word-spacing: 5px;
-        letter-spacing: -1px;
-    }
-
-    ul {
-        margin: 10px 0;
-        list-style:decimal;
-        list-style-position: inside;
-        @include get-color(color, textcolor);
-        word-spacing: 5px;
-        letter-spacing: -1px;
-    }
-
-    p {
-        line-height: 1.2;
-        font-size: 20px;
-        @include get-color(color, textcolor);
-        word-spacing: 5px;
-        letter-spacing: -1px;
-    }
-
-    li {
-        font-size: 18px;
-        line-height: 1.2;
-        margin: 10px 0;
-        @include get-color(color, textcolor);
-        word-spacing: 5px;
-        letter-spacing: -1px;
-    }
+   
 }
-
