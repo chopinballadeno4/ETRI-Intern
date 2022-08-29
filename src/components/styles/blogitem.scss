@@ -14,20 +14,23 @@
     a {
         text-align: end;
     }
+
+    
+}
+
+.BlogItem-date {
+    @include get-color(color, textcolor);
+    justify-self: flex-end;
+    text-align: end;
+    opacity: 0.5;
+    padding: 0 10px 10px 0;
+    font-size: 14px; 
 }
 
 .BlogItem-title {
     padding: 20px 10px;
     text-align: start;
     font-size: 20px;
-    @include get-color(color, headercolor);
+    @include get-color(color, content-h1color);
     font-weight: 500;
-}
-
-.BlogItem-date {
-    justify-self: flex-end;
-    text-align: end;
-    opacity: 0.5;
-    padding: 0 10px 10px 0;
-    font-size: 14px; 
 }

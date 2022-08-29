@@ -1,63 +1,114 @@
 @import "../../styles/darkmode";
+@import "../../styles/_mixins.scss";
 
 #blog-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    //@include get-color(background-image, blog-header);
     @include get-color(background-color, blog-header);
     padding: 65px 0;
 
-}
+    #blog-header-span {
+        padding: 15px 0 25px 0;
+        @include mobile {
+            width: 80%;
+        }
+        @include tablet {
+            width: 70%;
+        }
+        @include desktop {
+            width: 60%;
+        }
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    
+        span {
+            margin-left: 5px;
 
-#blog-header-span {
-    padding: 15px 0 25px 0;
-    width: 50%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+            @include mobile {
+                font-size: 1.8rem;
+            }
+            @include tablet {
+                font-size: 2.4rem;
+            }
+            @include desktop {
+                font-size: 3rem;
+            }
+        }
 
-    span {
+        #blog-icon {
+            text-align: center;
+            @include mobile {
+                font-size: 1.6rem;
+            }
+            @include tablet {
+                font-size: 2.0rem;
+            }
+            @include desktop {
+                font-size: 2.4rem;
+            }
+        }
         @include get-color(color, content-h1color);
-        margin-left: 5px;
-        font-size: 28px;
         font-weight: 500;
     }
-}
 
-#blog-icon {
-    @include get-color(color, content-h1color);
-    text-align: center;
-    font-size: 20px;
-}
-
-#blog-topic {
-    display: flex;
-    width: 50%;
-
-    #BlogTopic-Text {
-        padding-left: 10%;
-        width: 50%;
-        height: 100%;
+    #blog-topic {
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: space-around;
-        #BlogTopic-titleID {
-            font-size: 30px;
+        @include mobile {
+            width: 80%;
         }
-        div {
+        @include tablet {
+            width: 70%;
+        }
+        @include desktop {
+            width: 60%;
+        }    
+        #blog-topic-Text {
+            padding-left: 10%;
+            height: 100%;
             display: flex;
             flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-around;
+            > span {
+                @include get-color(color, content-h1color);
+                @include mobile {
+                    font-size: 1.8rem;
+                }
+                @include tablet {
+                    font-size: 2.4rem;
+                }
+                @include desktop {
+                    font-size: 3rem;
+                }
+                font-weight: 500;
+            }
+            
+            div {
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
 }
 
 #blog-list {
-    width: 50%;
     margin: 50px 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+
+    @include mobile {
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+    @include tablet {
+        width: 70%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include desktop {
+        width: 60%;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

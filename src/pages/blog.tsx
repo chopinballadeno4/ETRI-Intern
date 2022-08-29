@@ -1,5 +1,7 @@
 import "./styles/blog.scss";
-import React, { FunctionComponent, useEffect, useState } from "react";
+import "../components/styles/blogItem.scss";
+import "../styles/common.scss";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import BlogItem from "../components/BlogItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +9,6 @@ import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from "gatsby";
 import ViewMore from "../components/ViewMore";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import "../styles/common.scss";
 
 interface IBlogNode {
 	node: {
@@ -49,7 +50,7 @@ function blog({
 		edges.forEach(item => {
 			const tempObj = { ...item };
 			tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
-			// 이 부분 필요한가요 ? !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			// this is needed ? !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			tempArr = [...tempArr, tempObj];
 		});
 		setBlogList([...tempArr]);
@@ -59,7 +60,7 @@ function blog({
 		const result = [];
 		if (bloglist.length > 0) {
 			result.push(
-				<div id="BlogTopic-image">
+				<div id="blog-topic-image">
 					<GatsbyImage
 						image={
 							bloglist[0].node.frontmatter.thumbnail.childImageSharp
@@ -68,7 +69,7 @@ function blog({
 						alt="image"
 					/>
 				</div>,
-				<div id="BlogTopic-Text">
+				<div id="blog-topic-Text">
 					<span className="BlogItem-title" id="BlogTopic-titleID">
 						{bloglist[0].node.frontmatter.title}
 					</span>
