@@ -1,77 +1,117 @@
 @import "../../styles/darkmode";
 @import "../../styles/extends.scss";
+@import "../../styles/_mixins.scss";
 
 #home-research {
     width: 100%;
     position: relative;
+
+    #home-research-text {
+        max-width: 768px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        > span {
+            @include mobile {
+                font-size: 2.0rem;
+            }
+            @include tablet {
+                font-size: 3.5rem;
+            }
+            @include desktop {
+                font-size: 5.0rem;
+            }
+            font-weight: 600;
+            @extend %header-text;
+        }
+    }
 }
 
 #home-blog {
     width: 100%;
-}
 
-#home-research-text {
-    width: 600px;
-    min-width: 600px;
-    transform: translate(-50%, -70%);
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 50%;
-    left: 50%;
-    > span {
-        font-size: 50px;
-        font-weight: 600;
-        @extend %header-text;
-    }
-}
-
-#home-blog1 {
-    @include get-color(background-color, home-blog1-bgcolor);
-    display: flex;
-    justify-content: center;
-    min-width: 1024px;
-    div {
+    #home-blog1 {
+        @include get-color(background-color, home-blog1-bgcolor);
         display: flex;
-        width: 50%;
-        padding: 50px 0;
+        justify-content: center;
         div {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            > span {
-                font-size: 30px;
-                font-weight: 600;
+            @include mobile {
+                width: 90%;
+            }
+            @include tablet {
+                width: 70%;
+            }
+            @include desktop {
+                width: 50%;
+            }
+            padding: 50px 0;
+            div {
                 padding-left: 30px;
-                @extend %header-text;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                > span {
+                    font-weight: 600;
+                    @extend %header-text;
+                    @include mobile {
+                        font-size: 1.5rem;
+                    }
+                    @include tablet {
+                        font-size: 2.0rem;
+                    }
+                    @include desktop {
+                        font-size: 3.0rem;
+                    }
+                }              
             }
-            
+        }
+    }
+
+    #home-blog2 {
+        @include get-color(background-color, home-blog2-bgcolor);
+        display: flex;
+        justify-content: center;
+        div {
+            display: flex;
+            @include mobile {
+                width: 90%;
+            }
+            @include tablet {
+                width: 70%;
+            }
+            @include desktop {
+                width: 50%;
+            }
+            padding: 50px 0;
+            div {
+                padding-right: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                > span {
+                    font-weight: 600;
+                    @extend %header-text;
+                    @include mobile {
+                        font-size: 1.5rem;
+                    }
+                    @include tablet {
+                        font-size: 2.5rem;
+                    }
+                    @include desktop {
+                        font-size: 3.0rem;
+                    }
+                }
+            }
         }
     }
 }
 
-#home-blog2 {
-    @include get-color(background-color, home-blog2-bgcolor);
-    display: flex;
-    justify-content: center;
-    min-width: 1024px;
-    div {
-        display: flex;
-        width: 50%;
-        padding: 50px 0;
-        div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            > span {
-                font-size: 30px;
-                font-weight: 600;
-                padding-right: 30px;
-                @extend %header-text;
-            }
-            
-        }
-    }
-}
+
+
+
 

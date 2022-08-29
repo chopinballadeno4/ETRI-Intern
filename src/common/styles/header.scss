@@ -11,6 +11,44 @@
     position: relative;
 
     #header-main {
+        @include mobile {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+    
+            #header-link {
+                display: none;
+            }
+    
+            #header-sidebar-button {
+                border: 0;
+                background-color: transparent;
+                #sidebar-icon {
+                    font-size: 30px;
+                    @include get-color(color, togglecolor);                    
+                }
+            }
+        }
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+    
+            #header-link {
+                display: none;
+            }
+    
+            #header-sidebar-button {
+                border: 0;
+                background-color: transparent;
+                #sidebar-icon {
+                    font-size: 30px;
+                    @include get-color(color, togglecolor);                    
+                }
+            }
+        } // 위와 중복 제거
+
         @include desktop {
             display: flex;
             align-items: center;
@@ -58,25 +96,7 @@
                 }
             }
         }
-    
-        @include nondesktop {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-    
-            #header-link {
-                display: none;
-            }
-    
-            #header-sidebar-button {
-                border: 0;
-                background-color: transparent;
-                #sidebar-icon {
-                    font-size: 30px;
-                    @include get-color(color, togglecolor);                    
-                }
-            }
-        }
+        
         //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         #header-logo {
             height: 100%;

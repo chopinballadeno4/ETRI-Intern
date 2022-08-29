@@ -1,6 +1,6 @@
 @import "../../styles/darkmode";
 
-.footer-wrapper {
+#footer-wrapper {
     @include get-color(background-color, headercolor);
     padding: 35px 0;
     display: flex;

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "components/Layout";
 import "./styles/index.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import { graphql, navigate, Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import ViewMore from "../components/ViewMore";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -52,7 +52,7 @@ function IndexPage({
 							service situations (Local) Robot intelligence technology
 							development
 						</span>
-						<Link to={"/research"} className="ViewMore_Link">
+						<Link to={"/research"} className="ViewMore_Link" id="home-viewmore">
 							<FontAwesomeIcon icon={faArrowRightLong} />
 							<span>View more</span>
 						</Link>
