@@ -1,6 +1,24 @@
 @import "../../styles/darkmode";
+@import "../../styles/extends.scss";
+@import "../../styles/_mixins.scss";
 
 #about-main {
-    width: 40%;
+    @include mobile {
+        width: 80%
+    }
+    @include tablet {
+        width: 60%;
+    }
+    @include desktop {
+        width: 40%;
+    }
+    
+    #research-html {
+        width: 100%;
+        margin: 0 0 100px 0;
+        display: flex;
+        flex-direction: column;
+        @extend %html-style;
+    }
 }
 
