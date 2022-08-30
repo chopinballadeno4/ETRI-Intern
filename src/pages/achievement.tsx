@@ -221,7 +221,7 @@ export const achievementQuery = graphql`
 						no
 						thumbnail {
 							childImageSharp {
-								gatsbyImageData
+								gatsbyImageData(width: 400)
 							}
 						}
 					}

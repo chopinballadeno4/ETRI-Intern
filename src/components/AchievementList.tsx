@@ -28,20 +28,19 @@ function AchievementList({ content }: IAchievementList) {
 		console.log(content);
 		for (let i = 0; i < content.length; i++) {
 			result.push(
-				<>
-					{/* <GatsbyImage
+				<div id="AchievementList-wrapper">
+					<GatsbyImage
 						image={
 							content[i].node.frontmatter.thumbnail.childImageSharp
 								.gatsbyImageData
 						}
 						alt="image"
-						className="PersonInfo-image"
-					/> */}
+						id="achievement-image"
+					/>
 					<main
 						dangerouslySetInnerHTML={{ __html: content[i].node.html }}
-						id="ItemList-wrapper"
 					></main>
-				</>,
+				</div>,
 			);
 		}
 		return result;
