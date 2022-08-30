@@ -44,17 +44,36 @@ function blog({
 	},
 }: IBlog) {
 	const [bloglist, setBlogList] = useState<IBlogNode[]>([]);
+	const [isKor, setIsKor] = useState(false);
 
 	useEffect(() => {
 		let tempArr: IBlogNode[] = [];
 		edges.forEach(item => {
-			const tempObj = { ...item };
-			tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
-			// this is needed ? !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			tempArr = [...tempArr, tempObj];
+			if (item.node.frontmatter.language === "kor" && isKor) {
+				const tempObj = { ...item };
+				tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
+				tempArr = [...tempArr, tempObj];
+			}
+			if (item.node.frontmatter.language === "eng" && !isKor) {
+				const tempObj = { ...item };
+				tempObj.node.frontmatter.date = new Date(item.node.frontmatter.date);
+				tempArr = [...tempArr, tempObj];
+			}
 		});
 		setBlogList([...tempArr]);
-	}, []);
+	}, [isKor]);
+
+	const korClick = () => {
+		if (!isKor) {
+			setIsKor(!isKor);
+		}
+	};
+
+	const engClick = () => {
+		if (isKor) {
+			setIsKor(!isKor);
+		}
+	};
 
 	const RenderBlogHeader = () => {
 		const result = [];
@@ -101,8 +120,24 @@ function blog({
 			<div className="Wrapper">
 				<section id="blog-header">
 					<div id="blog-header-span">
-						<FontAwesomeIcon icon={faBookBookmark} id="blog-icon" />
-						<span>New</span>
+						<div>
+							<FontAwesomeIcon icon={faBookBookmark} id="blog-icon" />
+							<span>New</span>
+						</div>
+						<div style={{ display: "flex" }}>
+							<button id="blog-language-button" onClick={korClick}>
+								Kor
+							</button>
+							<button
+								id="blog-language-button"
+								onClick={engClick}
+								style={{
+									marginLeft: "10px",
+								}}
+							>
+								Eng
+							</button>
+						</div>
 					</div>
 					<div id="blog-topic">{RenderBlogHeader()}</div>
 				</section>

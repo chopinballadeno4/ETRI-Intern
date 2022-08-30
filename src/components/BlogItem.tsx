@@ -3,7 +3,6 @@ import "../styles/common.scss";
 import React, { useEffect, useState } from "react";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import ViewMore from "./ViewMore";
-import { node } from "prop-types";
 
 interface IBlogItemNode {
 	node: {

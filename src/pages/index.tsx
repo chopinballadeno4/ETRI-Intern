@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "components/Layout";
 import "./styles/index.scss";
+import "../styles/common.scss";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 import ViewMore from "../components/ViewMore";
@@ -115,7 +116,7 @@ export const HomeQuery = graphql`
 						title
 						thumbnail {
 							childImageSharp {
-								gatsbyImageData(width: 768, height: 400)
+								gatsbyImageData
 							}
 						}
 						date(formatString: "YYYY.MM.DD.")

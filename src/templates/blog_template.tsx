@@ -40,33 +40,13 @@ function BlogTemplate({
 }: IBlogTemplate) {
 	const [blogitem, setBlogItem] = useState<IBlogTemplateNode>();
 	const [html, setHtml] = useState<string>("");
-	const [isKor, setIsKor] = useState(false);
-	console.log(edges);
 
 	useEffect(() => {
 		setBlogItem(edges[0]);
-		edges.map(item => {
-			if (item.node.frontmatter.language === "kor" && isKor) {
-				setHtml(item.node.html);
-			}
-			if (item.node.frontmatter.language === "eng" && !isKor) {
-				setHtml(item.node.html);
-			}
-		});
-		console.log(html);
-	}, [isKor]);
-
-	const korClick = () => {
-		if (!isKor) {
-			setIsKor(!isKor);
+		if (blogitem !== undefined) {
+			setHtml(blogitem?.node.html);
 		}
-	};
-
-	const engClick = () => {
-		if (isKor) {
-			setIsKor(!isKor);
-		}
-	};
+	}, []);
 
 	const RenderThumbnail = () => {
 		if (blogitem !== undefined) {
@@ -97,16 +77,6 @@ function BlogTemplate({
 						<div className="BlogItem-date">
 							<span>{blogitem?.node.frontmatter.date}</span>
 						</div>
-						<button className="language-button" onClick={korClick}>
-							Kor
-						</button>
-						<button
-							className="language-button"
-							onClick={engClick}
-							style={{ marginLeft: "10px" }}
-						>
-							Eng
-						</button>
 					</div>
 					{RenderThumbnail()}
 					<main
