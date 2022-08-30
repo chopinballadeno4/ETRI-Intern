@@ -1,4 +1,5 @@
 import "./styles/layout.scss";
+import { Link } from "gatsby";
 import React, { useEffect } from "react";
 import Footer from "../common/Footer";
 import Header from "../common/Header";

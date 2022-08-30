@@ -15,17 +15,54 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-    
-            #header-link {
+
+            #header-darkmode-button {
                 display: none;
             }
     
-            #header-sidebar-button {
-                border: 0;
-                background-color: transparent;
-                #sidebar-icon {
+            #sidebar-button {
+                svg {
+                    display: block;
                     font-size: 30px;
-                    @include get-color(color, togglecolor);                    
+                    @include get-color(color, togglecolor);
+                }
+                &:hover {
+                    cursor: pointer;
+                }       
+            }
+            
+            #click:checked ~ ul {
+                left: 0%;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                span {
+                    color: #fff;
+                    font-size: 18px;
+                    padding-top: 10px;
+                }
+            }
+
+            #header-link {
+                ul {
+                    position: fixed;
+                    z-index: 1;
+                    left: -100%;
+                    top: 0;
+                    background-color: #0053d6;
+                    opacity: 0.85;
+                    height: 100%;
+                    width: 50%;
+                    display: block;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                    a {
+                        margin: 20px 0;
+                        text-decoration: none;
+                    }
+                    border-right: 1px solid black;
                 }
             }
         }
@@ -34,17 +71,54 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-    
-            #header-link {
+
+            #header-darkmode-button {
                 display: none;
             }
     
-            #header-sidebar-button {
-                border: 0;
-                background-color: transparent;
-                #sidebar-icon {
+            #sidebar-button {
+                svg {
+                    display: block;
                     font-size: 30px;
-                    @include get-color(color, togglecolor);                    
+                    @include get-color(color, togglecolor);
+                }
+                &:hover {
+                    cursor: pointer;
+                }       
+            }
+            
+            #click:checked ~ ul {
+                left: 0%;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                span {
+                    color: #fff;
+                    font-size: 18px;
+                    padding-top: 10px;
+                }
+            }
+
+            #header-link {
+                ul {
+                    position: fixed;
+                    z-index: 1;
+                    left: -100%;
+                    top: 0;
+                    background-color: #0053d6;
+                    opacity: 0.85;
+                    height: 100%;
+                    width: 30%;
+                    display: block;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                    a {
+                        margin: 20px 0;
+                        text-decoration: none;
+                    }
+                    border-right: 1px solid black;
                 }
             }
         } // 위와 중복 제거
@@ -95,6 +169,10 @@
                  opacity: 0.6;   
                 }
             }
+
+            #sidebar-button {
+               display: none; 
+            }
         }
         
         //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -108,9 +186,12 @@
                 object-fit: scale-down;
             }
         }
+
+        #click {
+            display: none;
+        }
     }
 }
-
 
 
 

@@ -40,28 +40,31 @@ const Header: FunctionComponent = function () {
 					</Link>
 				</div>
 				<nav id="header-link">
-					<Link to={"/research"}>
-						<span>Our research</span>
-					</Link>
-					<Link to={"/achievement"}>
-						<span>Achievement</span>
-					</Link>
-					<Link to={"/blog"}>
-						<span>Blog</span>
-					</Link>
-					<Link to={"/people"}>
-						<span>People</span>
-					</Link>
-					<Link to={"/about"}>
-						<span>About</span>
-					</Link>
+					<input type="checkbox" id="click" />
+					<label htmlFor="click" id="sidebar-button">
+						<FontAwesomeIcon icon={faBars} />
+					</label>
+					<ul>
+						<Link to={"/research"}>
+							<span>Our research</span>
+						</Link>
+						<Link to={"/achievement"}>
+							<span>Achievement</span>
+						</Link>
+						<Link to={"/blog"}>
+							<span>Blog</span>
+						</Link>
+						<Link to={"/people"}>
+							<span>People</span>
+						</Link>
+						<Link to={"/about"}>
+							<span>About</span>
+						</Link>
+					</ul>
 					<button onClick={darkmodeClick} id="header-darkmode-button">
 						<FontAwesomeIcon icon={faMoon} id="darkmode-icon" />
 					</button>
 				</nav>
-				<button id="header-sidebar-button">
-					<FontAwesomeIcon icon={faBars} id="sidebar-icon" />
-				</button>
 			</header>
 		</div>
 	);
